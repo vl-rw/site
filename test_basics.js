@@ -229,21 +229,21 @@ function door(text) {
     	break;
   	case "23_10_block":
     	message('Press Z to Chemistry<br><br><br><br>');
-		link_z = "/chem/index.html";
+		link_z = "chem/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "22_11_block":
     	message('Press Z to Chemistry<br><br><br><br>');
-		link_z = "/chem/index.html";
+		link_z = "chem/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "23_12_block":
     	message('Press Z to Chemistry<br><br><br><br>');
-		link_z = "/chem/index.html";
+		link_z = "chem/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
