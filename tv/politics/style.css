@@ -1,0 +1,80 @@
+    #body {
+    margin: 0;
+    display: flex;
+    }
+    #view {
+    position: absolute;
+    }
+    #scene {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    transition-duration: 0.3s;
+    }
+    #scene img {
+    width: 80%;
+    transition-duration: 0.5s;
+    }
+    #collection {
+    width: 10vw;
+    margin-left: 90%;
+    height: 100vh;
+    position: absolute;
+    opacity: 0.3;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    }
+    #collection:hover {
+    opacity: 0.7;
+    }
+    .item {
+    margin: 6%;
+    width: 9vw;
+    height: 10vh;
+    background: grey;
+    transition-duration: .5s;
+    background-size: cover;
+    border-radius: 10px;
+    }
+    .item:hover {
+    box-shadow: 10px 5px 5px white;
+    }
+    #buttons {
+    position: absolute;
+    width: 60vw;
+    height: 10vh;
+    margin-left: 20%;
+    margin-top: 35%;
+    opacity: 0.3;
+    transition-duration: .5s;
+    }
+    #buttons:hover {
+    opacity: 0.7;
+    }
+    #view {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    }
+    #cards {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: yellow;
+    z-index: 2;
+    }
+    #cards1 {
+    display: none;
+    }
+    .controls {
+    width: 7vw;
+    margin-left: 7%;
+    height: 7vw;
+    border-radius: 50%;
+    transition-duration: .5s;
+    }
+    .controls:hover {
+    box-shadow: 10px 5px 5px red;
+    }

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="windows-1252">
+<title>Hardcore coding</title>
+<link rel="icon" href="../images/fac.png" type="image/x-icon" />
+<style>
+#body {
+	background-image: url("HD-wallpaper-code-beograd-letters-programming-symbols-texture (1).jpg");
+	background-size: cover;
+}
+.menu {
+	width: 15vw;
+	height: 90vh;
+	position: fixed;
+	left: 5%;
+	top:  5%;
+	background-color: white;
+	border-radius: 10px;
+	border-radius:  0% 20px 20px 20px;
+	border: 2px solid black;
+}
+.round {
+	left: 0.5%;
+	width: 5vw;
+	height: 5vw;
+	position: fixed;
+	border-radius: 50% 0% 0% 50%;
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 2px solid black;
+	z-index: -10;
+}
+
+.round_clang {
+	top:  5%;
+	background-image: url("cplus.webp");
+	background-size: cover;
+}
+
+.java_round {
+	top:  20%;
+	background-image: url("java.webp");
+	background-size: cover;
+}
+
+.linux_round {
+	top:  35%;
+	background-image: url("arch.png");
+	background-size: cover;
+}
+
+.back_round {
+	top:  50%;
+	background-image: url("61449.png");
+	background-size: cover;
+}
+
+.border-cover {
+	width: 9px;
+	height: 5vw;
+	border: 0px solid red;
+	background: white;
+}
+
+.border-cover-c {
+	position: absolute;
+	top: -0.01vh;
+	left: -2px;
+}
+
+.border-cover-l {
+	position: absolute;
+	top: 30vh;
+	left: -5px;
+}
+
+.border-cover-j {
+	position: absolute;
+	top: 15vh;
+	left: -5px;
+}
+p, h1 {
+	margin-left: 10px;
+}
+#screen {
+	border: 2px solid black;
+	width: 70vw;
+	height: 90vh;
+	position: fixed;
+	left: 23%;
+	top:  5%;
+	border-radius: 0% 10% 0% 10%;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+#paragraph {
+overflow-y: scroll;
+overflow-x: hidden;
+margin-top: 10%;
+height: 80%;
+width: 98%;
+font-size: 30px;
+}
+</style>
+</head>
+<body id="body">
+
+	<div class="round_clang round" onclick="clang()">
+	</div>
+	
+	
+	<div class="java_round round" onclick="java()">
+	</div>
+	
+	
+	<div class="linux_round round" onclick="linux()">
+	</div>
+	
+	
+	<div class="back_round round" onclick="window.open('../index.html')">
+	</div>
+
+<div id="cl" class="menu clang">
+
+	<h1>C++ info</h1>
+	
+	<p onclick="window.open('https://coliru.stacked-crooked.com/')">online compiler # 1🢅</p>
+	
+	<p onclick="window.open('https://www.geeksforgeeks.org/concatenating-two-strings-in-c/#highlighter_497389')">online compiler # 2🢅</p>
+		
+	<p onclick="window.open('https://www.cyberciti.biz/faq/howto-compile-and-run-c-cplusplus-code-in-linux/')">How to compile 🢅</p>	
+		
+	<p onclick="window.open('https://github.com/vl-rw/cryptonotes')">Cryptonotes 🢅</p>	
+	
+	<p onclick="clan()">Simple C program</p>
+	
+	<p onclick="cplus()">Simple C++ program</p>
+	
+	<p onclick="pascal()">Pascal in C</p>
+
+	<p onclick="lui()">Liouville in C</p>
+	
+	<div class="border-cover border-cover-c">
+	</div>
+
+</div>
+
+
+<div id="ja" class="menu java">
+
+	<h1>Java info</h1>
+	
+	<p onclick="window.open('https://learnprogramo.com/online-compiler-for-java/')">online compiler 🢅</p>
+	
+	<p onclick="mortgage()">Mortgage</p>
+	
+	<div class="border-cover border-cover-j">
+	</div>
+
+</div>
+
+
+<div id="li" class="menu linux">
+
+	<h1>Linux info</h1>
+	
+	<p onclick="window.open('https://mega.nz/folder/PQgwVKpb#SEQD_IJnGzHi4xm-iap9_A')">Archive of bin linux files 🢅</p>
+	
+	<p onclick="terminal()">Terminal</p>
+	
+	<p onclick="archive()">Archive making</p>
+	
+	<p onclick="lub18()">Lubuntu 18.10</p>
+	
+	<p onclick="sshus()">ssh usage</p>
+	
+	<p onclick="termux()">termux</p>
+	
+	<p onclick="format()">format, dd</p>
+	
+	
+	<div class="border-cover border-cover-l">
+	</div>
+
+</div>
+
+<div id="screen">
+
+<p id="paragraph"></p>
+
+</div>
+
+
+<script>
+
+/* Block for listing menus */
+function linux() {
+
+	li.style.zIndex="999";
+	ja.style.zIndex="0";
+	cl.style.zIndex="0";
+	paragraph.innerHTML = "";
+
+}
+
+function java() {
+
+	li.style.zIndex="0";
+	ja.style.zIndex="999";
+	cl.style.zIndex="0";
+	paragraph.innerHTML = "";
+}
+
+function clang() {
+
+	li.style.zIndex="0";
+	ja.style.zIndex="0";
+	cl.style.zIndex="999";
+	paragraph.innerHTML = "";
+}
+
+/* Block for java texts */
+function mortgage(){
+
+paragraph.innerHTML = ` import java.util.Scanner;<br>
+import java.text.NumberFormat;<br>
+<br>
+public class Main {<br>
+<br>
+	public static void main (String[] args) {<br>
+<br>
+		Scanner scanner= new Scanner(System.in);<br>
+		int principal = 0;<br>
+		float interestRate = 0.0F;<br>
+		int years = 0;	<br>
+<br>
+<br>
+		System.out.print(\"Welcome to the mortgage calculator. Let's start here. How much do you plan to owe? (1K - 1M):\");<br>
+		while (true) {<br>
+			principal = scanner.nextInt();<br>
+			if ((principal>= 1_000) && (principal<=1_000_000)) <br>
+				break;<br>
+			System.out.print(\"Read carefully: from one thousand up to one million! Try again:\");<br>
+		}<br>
+<br>
+		System.out.print(\"Ok then. And what is amount of the interest rate?:\");<br>
+		while (true) {<br>
+			interestRate = scanner.nextFloat();<br>
+			if ((interestRate > 0) && (interestRate <=30))<br>
+				break;<br>
+			System.out.print(\"We are not n Europe or Venesuella, honey! Try again - from 0 to 30%:\");<br>
+		}<br>
+<br>
+		System.out.print(\"Great! And finaly, how long do you plan to pay to these capitalistic swines?:\");<br>
+		while (true) {<br>
+			years = scanner.nextInt();<br>
+			if ((years > 0) && (years <=30)) <br>
+				break;<br>
+			System.out.print(\"I am starting to lose patience. From one to thirty years!!!\");<br>
+		}<br>
+<br>
+		float r = interestRate / 1200F;<br>
+		// 12 month in year and 100 percent in a whole<br>
+<br>
+		int n = (shot)years * 12;<br>
+<br>
+		double mortgage = (((r*(Math.pow(1+r, n)))/((Math.pow(1+r, n)-1))))*principal;<br>
+<br>
+		NumberFormat currency = NumberFormat.getCurrencyInstance();<br>
+		String result = currency.format(mortgage);<br>
+<br>
+		System.out.println(\"Your monthly slave payment is \"+result);<br>
+		}<br>
+	}<br>
+<br><br><br><br>;
+`;
+
+}
+
+
+/* Block for clang texts */
+function clan() {
+
+paragraph.innerHTML = ` 
+1. program-source-code.c<br>   
+2. Content of the file:<br><br>   
+#include &lt;stdio.h&gt; <br>   
+/* demo.c:  My first C program on a Linux */
+<br>   int main(void) {
+<br>    printf(\"Hello! This is a test prgoram.\n\");
+<br>    return 0;<br>   }<br><br>
+   3. make program-source-code (short form for: cc program-source-code.c -o executable-file-name ) <br>
+      4. ./program-source-code<br><br>
+
+`;
+};
+
+function cplus() {
+
+paragraph.innerHTML = ` 
+ 1. demo.c<br>   
+ 2. Content of the file:<br><br>   
+ #include \"iostream\"<br>
+    // demo2.C - Sample C++ program 
+    <br>   int main(void) {
+    <br>       std::cout << \"Hello! This is a C++ program.\n\";
+    <br>       return 0;<br>   }<br>
+    <br> 3. g++ demo.c -o demo ( or \"g++ demo.c\", file will be a.out)
+    <br>4. ./demo<br>
+
+`;
+};
+
+function pascal() {
+
+paragraph.innerHTML = ` 
+#define begin int main(){<br>
+#define end }<br>
+#include <stdio.h><br>
+#define say printf<br><br><br>
+begin<br><br>say(\"hello, world!\\n\");
+<br><br>end<br><br><br>
+<br>Compiled on both gcc and g++
+
+`;
+};
+
+function lui() {
+
+paragraph.innerHTML = ` 
+
+// This program DOES NOT work; I'll find later why; <br>
+// This is C-analogue of python-based liouville function <br> <br>
+
+#include <_stdio.h_> <br>
+#include <_string.h_> <br><br>
+
+#define MAX_SIZE										 \  <br>
+	250000000 // Maximum number of elements in the map  <br>
+			  // 250 millions; if you try 3000 millions <br>
+			  // you will get "relocation truncated to fit: R_X86_64_P..." <br>
+			  // integers are stored as 4 bytes (32 bits). <br>
+			  // so it gives us 4*250 mb = 1 gb of memory <br> <br>
+
+int size = 0; // Current number of elements in the map  <br>
+int keys[MAX_SIZE]; // Array to store the keys  <br>
+int values[MAX_SIZE]; // Array to store the values <br>
+int indexx = -1; // for start the arrays <br>
+int sum = 0;   // sum for luivile <br>
+int cumulative_values[MAX_SIZE]; //array for cum_luivile <br> <br>
+
+
+// start functions for working the dictionary <br> <br>
+
+// Function to get the index of a key in the keys array  <br>
+int getIndex(int key)  <br>
+{  <br>
+    for (int i = 0; i < size; i++) {  <br>
+        if (keys[i] == key) {  <br>
+            return i;  <br>
+        }  <br>
+    }  <br>
+    return -1; // Key not found  <br>
+} <br>
+// Function to insert a key-value pair into the map  <br>
+void insert(int key, int value)  <br>
+{  <br>
+    if (indexx == -1) { // Key not found  <br>
+        keys[size] = key;  <br>
+        values[size] = value;  <br>
+        size++;  <br>
+    }  <br>
+    else { // Key found  <br>
+    	values[indexx] = value;  <br>
+    }  <br>
+}  <br>
+// Function to get the value of a key in the map  <br>
+int get(int key)  <br>
+{  <br>
+    indexx = getIndex(key);  <br>
+    if (indexx == -1) { // Key not found  <br>
+        return -1;  <br>
+    }  <br>
+    else { // Key found  <br>
+        return values[indexx];  <br>
+    }  <br>
+}  <br>
+// Function to print the map  <br>
+void printMap()  <br>
+{  <br>
+    for (int i = 0; i < size; i++) {  <br>
+        printf("%d: %d\\n", keys[i], values[i]);  <br>
+    }  <br>
+}  <br> <br>
+
+// end of dictionary functions <br> <br>
+
+// # Словарь для хранения простых множителей и их количества <br>
+void prime_factors_with_counts(int n)  <br>
+{  <br>
+    //printf("prime_factors_with_counts \\n");  <br>
+	int i = 2; <br>
+	while (i * i <= n) { <br>
+		if ((n%i) != 0) { <br>
+			i = i + 1; <br>
+		} else { <br>
+			n = n / i; <br>
+      		insert(i, 1);  <br>
+		}; <br>
+		if (n>i) { <br>
+			insert(n, 1);  <br>
+		}; <br>
+	}; <br>
+    printf("returned factor: %d ", n); <br>
+    printf("\\r"); <br>
+}; <br>
+ <br>
+int liouville(int n) {  <br>
+    for (int i = 0; i < size; i++) {  <br>
+        sum = sum + get(i); <br>
+    }; <br>
+    if ((sum%2)==0) { <br>
+    	return 1; <br>
+    } else { <br>
+    	return -1; <br>
+    }; <br>
+}; <br> <br>
+
+void cum_liouville(int n) { <br>
+    //printf("cum_liouville \\n"); <br>
+	int cumulative_value = 0; <br> <br>
+ 
+    for (int num = 1; num == (n+1); num++) {  <br>
+        int liouville_result = liouville(num); <br>
+        cumulative_value += liouville_result; <br>
+        insert((size +1), cumulative_value);  <br>
+    }; <br>
+}; <br> <br>
+
+int main()  <br>
+{  <br>
+    printf("main \\n"); <br>
+	int n = 906180359; <br> <br>
+	
+	cum_liouville(n); <br>
+	int cumulative_result; <br>
+	int liouville_result; <br> <br>
+
+    for (int num = 1; num < (n+1); num++) {  <br>
+        prime_factors_with_counts(num); <br>
+        liouville_result = liouville(num); <br>
+        cumulative_result = cumulative_values[num - 1]; <br>
+    }; <br> <br>
+    
+    printMap(); <br>
+    printf("%d\\n", cumulative_result); <br>
+    printf("%d\\n", liouville_result); <br>
+    return 0;  <br>
+    
+}; <br>
+	
+
+`;
+};
+
+
+/* Block for linux texts */
+	
+function terminal() {
+
+paragraph.innerHTML = ` 
+<ul>
+<li>ssh -X vladimir@192.168.0.107</li>
+<li>scp folder -r host:path/directory</li>
+<li>scp yourusername@yourserver:/home/yourusername/examplefile .</li>
+<li>rm -f .ssh/known_hosts</li>
+<li>disown jobID1 jobID2 | disown -a | remove all jobs</li>
+<li>ps aux | grep "text"</li>
+<li>mkfs vfat</li>
+<li>setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' & timedatectl set-timezone Asia/Vladivostok</li>
+<li>ls -a</li>
+<li>ls -lh</li>
+<li>ls | wc -l</li>
+<li>nohup [process] &</li>
+<li>jobs</li>
+<li>sudo dd if=/media/lubuntu/INNER_120GB/lub16.iso of=/dev/sdd1 bs=100M</li>
+<li>sudo adduser server & sudo usermod -aG sudo server</li>
+<li>sudo mkfs.vfat -F 32 -n 'name_for_your_pendrive' /dev/sdy1</li>
+<li>sudo fdisk /dev/sdc</li>
+<li>tail -c 100000000 file.1 | cat > file.2 - get last 100 mb of the file</li>
+</ul>
+`;
+
+};
+	
+	
+	
+function archive() {
+
+paragraph.innerHTML = ` 
+<ul>
+<li>Unpack tar:<br>
+tar -xf archive.tar.gz</li>
+<li>Pack tar:<br>
+tar -czf archive.tar.gz file-name-1 file-name-2<br>
+example: tar -czf photos.tar.gz *.jpg</li>
+<li>sudo apt-get install unrar<br>
+unrar x FileName.rar</li>
+<li>zip new_archive.zip old_file.html<br>
+unzip new_archive.zip</li>
+</ul>
+`;
+
+};
+
+	
+	
+	
+function lub18() {
+
+paragraph.innerHTML = ` 
+<ul>
+<li>nmcli dev wifi connect TP-Link_D7DC password 550*****</li>
+<li><a href="./repos/list1/sources.list">sources.list</a> first variant</li>
+<li><a href="./repos/list2/sources.list">sources.list</a> second variant</li>
+<li>sudo cp sources.list /etc/apt</li>
+<li>sudo apt update</li>
+</ul>
+`;
+
+};
+	
+	
+function sshus() {
+
+paragraph.innerHTML = ` 
+<ul>
+<li>ssh -p 2222 tablet@192.168.0.103</li>
+<li>ssh vladimir@192.168.0.104</li>
+<li>scp -r /path/to/local/dir user@remotehost:/path/to/remote/dir</li>
+<li>rsync -avz -e 'ssh' /path/to/local/dir user@remotehost:/path/to/remote/dir ????
+</li>
+</ul>
+`;
+
+};
+
+	
+	
+function format() {
+
+paragraph.innerHTML = ` 
+<ul>
+<li>dd if=/path/to/your/isofile of=/your/usb/disk bs=8M status=progress</li>
+
+<li>dd if=<_path to input file_> | pv -s <_size e.g. 1377M_> | dd of=<_path to target device_></li>
+
+<li>sudo mkfs.ext4 -n 'USB' -I /dev/sdc1</li>
+
+<li>sudo mkfs.exfat -l 'USB' /dev/sdc1
+</li>
+</ul>
+`;
+
+};
+	
+	
+function termux() {
+
+paragraph.innerHTML = ` 
+<ul>
+
+<li><a href="https://archive.org/details/termux-repositories-legacy">repository</a></li>
+<li>i have been using the old version ever since support for it was dropped.
+This is how i do it. After installing termux-v0.79-offline-bootstraps.apk ,
+you have to change the text in sources.list located in
+/data/data/com.termux/files/usr/etc/apt (use vi sources.list ) to
+deb https://packages.termux.dev/termux-main-21 stable main . Use</li>
+
+<li>apt remove science-repo</li>
+
+<li>apt remove game-repo</li>
+
+<li>Thats all, then to install packages just type:<br>
+
+pkg install packageName</li>
+
+<li>That's the easy way Manually
+</li>
+<li><a href="https://android.stackexchange.com/questions/245738/how-to-install-termux-on-old-android-5-devices-using-the-official-archive">source</a></li>
+</ul>
+`;
+
+};
+
+</script>
+
+</body>
+</html>
+

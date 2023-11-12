@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+<title>MY SCREENS</title>
+
+<style>
+
+body {
+background: #404040;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+.picture {
+
+width: 20vw;
+height: 20vh;
+margin: 1vh 1vw;
+background: #0f0f0f;
+resize: both;
+overflow: auto;
+padding: 0;
+overflow: hidden;
+display: flex;
+flex-direction: row;
+margin-left: 5%;
+}
+  
+.video {
+
+width: 100%;
+height: 100%;
+z-index: 1;
+
+}
+
+.x {
+width: 20%;
+height: 20%;
+z-index: 2;
+background: rgba(100, 100, 100, .2);
+margin-left: 10%;
+border-radius: 50%;
+color: white;
+text-align: center;
+align-items: center;
+transition-duration: .5s;
+
+}
+.picture:hover .x:nth-child(1) {
+width:70%;
+height:70%;
+}
+
+.picture:hover .x:nth-child(2) {
+margin-top: 20%;
+margin-left: -30%;
+}
+.picture:hover .x:nth-child(3) {
+margin-top: 35%;
+margin-left: -20%;
+}
+
+</style>
+
+
+</head>
+	<body>
+	<div class="picture" id="preview1" >
+	
+	<video class="video" autoplay onclick="addStream(1)"></video>
+	
+	<div class="x" onclick="removePreview(1)"><p>x</p></div><div class="x" onclick="addPreview(1)"><p>+</p></div>
+	
+	</div>
+
+<script>
+
+let numberW = 1;
+
+function removePreview(number) {
+
+	document.getElementById("preview"+number).remove();
+
+};
+
+function addPreview(number) {
+
+	numberW++;
+
+	let newDiv = document.createElement("div");
+	
+	newDiv.id = "preview" + numberW;
+	
+	newDiv.classList.add("picture");
+
+	newDiv.innerHTML = '<video class="video" autoplay="" onclick="addStream(' + numberW + ')"></video><div class="x" onclick="removePreview(' + numberW + ')"><p>x</p></div><div class="x" onclick="addPreview(' + numberW + ')"><p>+</p></div>';
+	
+	document.body.append(newDiv);
+};
+
+async function addStream(number) {
+
+    let previewElem = document.getElementById("preview"+number);
+    
+    let first = previewElem.firstElementChild;
+
+    first.srcObject = await navigator.mediaDevices.getDisplayMedia({video: {cursor: 'always'},audio: false, });
+
+};
+
+alert(`
+
+1. Windows are resizable;
+2. To add a window press "+" on existing window;
+3. To add stream to the window just press on it;
+4. To remove window press "x" on existing window;
+5. Have fun!
+
+`);
+	
+
+</script>
+
+</body></html>

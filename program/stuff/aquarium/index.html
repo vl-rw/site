@@ -1,0 +1,73 @@
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+<style>
+body {
+/*overflow: hidden;*/
+background-image: url("wall.jpg");
+background-size: cover;
+font-size: 20px;
+}
+.container {
+width: 500px;
+height: 500px;
+margin-left: calc(50% - 250px);
+margin-top: 200px;
+padding: 2% 2%;
+text-align: center;
+background-color: rgba(255, 255, 255, 0.6);
+border-radius: 2%;
+transition-duration: 2s;
+}
+h1 {
+/*-webkit-text-stroke: 2px black;*/
+text-shadow: -1px 0 black, 
+			  0px 1px black, 
+			  1px 0 black, 
+			  0 -1px black;
+color: navy;
+}
+a {
+border: 1px solid gray;
+border-radius: 8px;
+padding: 4px;
+color: white;
+background-color: orange;
+text-decoration: none;
+}
+p {
+margin-top: 70px;
+color: navy;
+}
+.links {
+margin-top: 100px;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="con">
+
+<h1>Hello there!</h1>
+
+<p>This is my virual aquarium.</p>
+
+<p>There are two variants below, both share one library to generate fishes and move them randomly from json file:</p>
+
+<div class="links">
+<a href="fish_1.html" style="margin-top: 300px;" class="ancor">Normal aquarium, 1900x920 px</a>
+
+<br><br>
+
+<a href="fish_5.html">Small aquarium, 500x500 px</a>
+</div>
+</div>
+
+<script src="float.js"></script>
+<script>
+
+skew_f('con', 2);
+
+</script>
+</body>
+</html>

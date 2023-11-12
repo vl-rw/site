@@ -1,0 +1,105 @@
+<html>
+
+    <head>
+    
+            <title>Gallery</title>
+            <meta content="">
+            <link rel="icon" href="../../images/fac.png" type="image/x-icon" />
+            <link rel="stylesheet" href="style.css">
+            
+    </head>
+  
+  
+    <body id="body">
+  
+    <div id="view">
+  
+            <div id="scene"></div>
+            
+            <div id="collection"></div>
+            
+            <div id="buttons">
+            
+                <button onclick="prev()" class="controls">prev</button>
+                <button onClick='' id="source" class="controls">open</button>
+                <button onClick="window.open('../index.html')" class="controls">back</button>
+                <button onclick="next()" class="controls">next</button>
+                
+            </div>
+  
+    </div>
+  
+  
+    <script src="json.js"></script>
+    <script>
+
+        for (let i in json) {
+        
+                text =  `<div style="background-image: url('${json[i]}');"  onClick="scene.innerHTML = '<img src=${json[i]}>'`;
+                
+                text += `; source.onclick = function(){window.open('${json[i]}')};" class="item"></div>`;
+                
+                collection.innerHTML += text;
+        };
+
+        scene.innerHTML = `<img src="${json.img1}">`;
+        source.onclick = function(){window.open(json.img1)};
+        
+        let keys = Object.keys(json);
+        
+        function next()  {
+    
+                key = scene.innerHTML.split('"')[1];
+                    
+                for (let j in keys) {
+                    
+                    if ( (key == json[keys[j]]) && (keys[parseInt(parseInt(j)+parseInt(1))]) ) {
+                        
+                        console.log(j);
+                        
+                        scene.firstChild.style.transform = "scale(0.01)";
+                        
+                        setTimeout(()=>{
+                        
+                            scene.firstChild.style.transform = "scale(1)";
+                            
+                            scene.firstChild.src = json[keys[parseInt(parseInt(j)+parseInt(1))]];
+                        
+                        }, 500);
+                        
+                        source.onclick = function(){window.open(json[keys[parseInt(parseInt(j)+parseInt(1))]])}; 
+
+                    };
+                };
+        };
+        
+        function prev()  {
+    
+                key = scene.innerHTML.split('"')[1];
+                    
+                for (let j in keys) {
+                    
+                    if ( (key == json[keys[j]]) && (keys[parseInt(parseInt(j)-parseInt(1))]) ) {
+                        
+                        console.log(j);
+                        
+                        scene.firstChild.style.transform = "scale(0.01)";
+                        
+                        setTimeout(()=>{
+                        
+                            scene.firstChild.style.transform = "scale(1)";
+                            
+                            scene.firstChild.src = json[keys[parseInt(parseInt(j)-parseInt(1))]];
+                        
+                        }, 500);
+                        
+                        source.onclick = function(){window.open(json[keys[parseInt(parseInt(j)-parseInt(1))]])};  
+
+                    };
+                };
+        };
+                        
+
+    </script>
+    </body>
+</html>

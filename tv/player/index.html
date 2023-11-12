@@ -1,0 +1,505 @@
+<html>
+  <head>
+    <title>PLAYER</title>
+    <meta content="">
+    <link rel="icon" href="../../images/fac.png" type="image/x-icon" />
+
+    <style>
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 20px;
+    }
+    body {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    section.light,
+    section.dark {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-around;
+    }
+    section.light {
+        background-color: #e0e5ec;
+    }
+    section.dark {
+        background-color: #131419;
+    }
+    div.circle,
+    div.circle_black {
+        position: relative;
+        display: flex;
+        width: 150px;
+        height: 150px;
+        border-radius: 150px;
+        align-items: center;
+        justify-content: center;
+    }
+    div.circle:before,
+    div.circle_black:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 150px;
+        height: 150px;
+        content: " ";
+        cursor: pointer;
+        transition: 0.3s ease-out;
+        border-radius: 150px;
+        filter: blur(7px);
+    }
+    div.circle.long,
+    div.circle_black.long {
+        width: 250px;
+        height: 100px;
+    }
+    div.circle.long:before,
+    div.circle_black.long:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 250px;
+        height: 100px;
+    }
+    div.circle:before {
+        box-shadow: 8px 8px 20px #a9a8b7, -8px -8px 20px #fff;
+    }
+    div.circle_black:before {
+        box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5),
+            -8px -8px 20px rgba(255, 255, 255, 0.2);
+    }
+    div.circle:hover:before {
+        box-shadow: 8px 8px 20px #a9a8b7, -8px -8px 20px #fff,
+            inset -8px -8px 20px #fff, inset 8px 8px 20px #a9a8b7;
+    }
+    div.circle_black:hover:before {
+        box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5),
+            -8px -8px 20px rgba(255, 255, 255, 0.2), inset 8px 8px 20px rgba(0, 0, 0, 1),
+            inset -8px -8px 20px rgba(255, 255, 255, 0.2);
+    }
+    div.circle:hover:before,
+    div.circle_black:hover:before {
+        transition: 0.3s ease-in;
+        transform: scale(1.05);
+    }
+    div.circle p,
+    div.circle_black p {
+        position: relative;
+        z-index: 5;
+        user-select: none;
+        cursor: pointer;
+    }
+    div.circle_black {
+        color: rgba(255, 54, 24, 0.7);
+    }
+
+    div.circle,
+    div.circle_black:hover p{
+        margin-left: -5px;
+        margin-top: -5px;
+        transition-duration: 0.4s;
+        display: block;
+    }
+    /*
+    https://codepen.io/Shinobis/pen/yLNgWGM
+    */
+
+
+
+    input[type=range] {
+        height: 32px;
+        -webkit-appearance: none;
+        margin: 10px 0;
+        width: 40%;
+        background: inherit;
+    }
+    input[type=range]:focus {
+        outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 16px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: #3f0d16;
+        border-radius: 25px;
+        border: 1px solid #423e39;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        box-shadow: 1px 1px 1px #828282;
+        border: 1px solid #423e39;
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        /* thumb_sl*/
+        background: #de402e;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -5px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #3f0d16; 
+    }
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 16px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: #B6B6B6;
+        border-radius: 25px;
+        border: 1px solid #423e39;
+    }
+    input[type=range]::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #828282;
+        border: 1px solid #423e39;
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        /*   background: #DADADA; */
+        background: rgba(255, 54, 24, 1);
+        cursor: pointer;
+    }
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 16px;
+        cursor: pointer;
+        animate: 0.2s;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+    input[type=range]::-ms-fill-lower {
+        background: #B6B6B6;
+        border: 1px solid #423e39;
+        border-radius: 50px;
+        box-shadow: 0px 0px 0px #000000;
+    }
+    input[type=range]::-ms-fill-upper {
+        background: #B6B6B6;
+        border: 1px solid #423e39;
+        border-radius: 50px;
+        box-shadow: 0px 0px 0px #000000;
+    }
+    input[type=range]::-ms-thumb {
+        margin-top: 1px;
+        box-shadow: 1px 1px 1px #828282;
+        border: 1px solid #8A8A8A;
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        background: #DADADA;
+        cursor: pointer;
+    }
+    input[type=range]:focus::-ms-fill-lower {
+        background: #B6B6B6;
+    }
+    input[type=range]:focus::-ms-fill-upper {
+        background: #B6B6B6;
+    }
+
+    /* https://www.cssportal.com/style-input-range/ */
+
+
+    .mostly-customized-scrollbar::-webkit-scrollbar {
+        width: 15px;
+        height: 18px;
+        background: #3f0d16; /* or add it to the track */
+        cursor: pointer;
+        animate: 0.2s;
+        border-radius: 15px;
+    }
+
+    /* Add a thumb */
+    .mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+        background: #de402e;
+        border-radius: 15px;
+    }
+
+    @font-face {
+        font-family: LiquidCrystal-Normal;
+        src: url("LiquidCrystal-Normal.otf") format("opentype");
+    }
+    @font-face {
+        font-family: Identification-Mono;
+        src: url("5Identification-Mono.ttf") format("opentype");
+    }
+    .screen {
+        width: 50%;
+        height: 50%;
+        background-color: #3f0d16;
+        font-family: LiquidCrystal-Normal;
+        color: #de402e;
+        padding: 10px;
+        border-radius: 10px;
+        border: 4px #423e39 solid;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+     
+  
+    .screen_glass {
+        font-family: LiquidCrystal-Normal !important;
+    }
+    .chosen_string {
+      background: #5e1822;
+    }
+    </style>
+  </head>
+  <body>
+  
+  
+<section id ="screen" class=dark>
+    <div id="screen_glass" class="screen mostly-customized-scrollbar" >
+<!--  Hello there!-->
+    </div>
+    	<div class="circle_black long" onClick="change_skin()">			 
+				<p style="font-family: 'Identification-Mono'">S K I N</p>
+		</div>
+</section>
+
+<section id="control" class="dark">
+
+		<div class="circle_black" onClick="prev()">
+				<p>&#9198;</p>
+		</div>
+		<div class="circle_black" onClick="chosen.play();">
+				<p>&#9654;</p>
+		</div>
+		<div class="circle_black" onClick="chosen.pause();">			 
+				<p>&#9208;</p>
+		</div>
+		<div class="circle_black" onClick="chosen.pause(); chosen.currentTime = 0;">
+				<p>&#9209;</p>
+		</div>
+        <div class="circle_black" onClick="next()">			 
+				<p>&#9197;</p>
+		</div>
+
+</section>
+
+<section id="volume" class="dark">
+
+		<div class="circle_black long" onClick="add_volume()">
+				<p>+</p>
+		</div>
+
+		
+		<input type="range" min="0" max="100" step="0" value="0" id="progress" onClick="chosen.currentTime = progress.value">  
+        
+
+		<div class="circle_black long" onClick="rem_volume()">			 
+				<p>-</p>
+		</div>
+
+</section>
+
+
+
+  <script src="list.json"></script>
+  
+  <script>
+  
+  light_skin = false;
+  
+  function change_skin() {
+        
+        light_skin = !light_skin;
+        
+        if (light_skin) {
+                
+                        let screen = document.getElementById('screen');
+
+                    screen.classList.replace("dark", "light");
+                    
+                        let control = document.getElementById('control');
+
+                    control.classList.replace("dark", "light");
+                    
+                        let volume = document.getElementById('volume');
+
+                    volume.classList.replace("dark", "light");
+                    
+                } else {
+                
+                        let screen = document.getElementById('screen');
+
+                    screen.classList.replace("light", "dark");
+                    
+                        let control = document.getElementById('control');
+
+                    control.classList.replace("light", "dark");
+                    
+                        let volume = document.getElementById('volume');
+
+                    volume.classList.replace("light", "dark");
+                
+        };
+  
+  };
+  
+  
+  
+  let audio = [];
+  
+  let number = 1;
+  
+  for (let element in music_list) {
+  
+    var p = document.createElement('p');
+    
+    p.innerHTML = `<p onClick="play_this(track_${number})" id="track_${number}">${number}. ${element}<br>`;
+  
+    if (number == 1) p.classList.add("chosen_string");
+  
+    screen_glass.appendChild(p);
+    
+    audio[number-1] = new Audio(music_list[element]);
+  
+    number ++; 
+    
+  };
+  
+  setTimeout(number = 0, 200);
+  
+  let chosen = audio[number];
+  
+  let basic_volume = 0.5;
+  
+  for (let element in audio) {
+    
+     audio[element].volume = basic_volume - 0.1;   
+    
+  };
+  
+  function rem_volume() {
+  
+    for (let element in audio) {
+    
+     if ( ( audio[element].volume - 0.05 ) > 0 )  
+     
+        audio[element].volume -= 0.05
+        
+     else audio[element].volume = 0;
+    
+    }
+  };
+  
+  
+  function add_volume() {
+  
+    for (let element in audio) {
+    
+     if ( ( audio[element].volume + 0.05 ) < 1 )  
+     
+        audio[element].volume += 0.05
+        
+     else audio[element].volume = 1;
+    
+    }
+  
+  };
+  
+  function next() {
+  
+    if (number<(audio.length-1)) {
+    
+        let el = document.getElementsByClassName("chosen_string");
+        
+        el[0].classList.remove("chosen_string");
+    
+        number++;
+        
+        eval(`track_${number+1}.classList.add("chosen_string")`);
+        
+        replay();
+    
+    };
+  
+  };
+  
+  function prev() {
+  
+    if (number > 0) {
+    
+        let el = document.getElementsByClassName("chosen_string");
+        
+        el[0].classList.remove("chosen_string");
+    
+        number--;
+        
+        eval(`track_${number+1}.classList.add("chosen_string")`);
+        
+        replay();
+    
+    };
+  
+  };
+  
+  function replay() {
+  
+        chosen.pause(); 
+        
+        chosen.currentTime = 0;
+        
+        chosen = audio[number];
+        
+        chosen.play();
+  
+  };
+  
+  function music_tumb() {
+
+        progress.max = chosen.duration;
+  
+        progress.value = chosen.currentTime;
+        
+        if ( progress.value > (progress.max - 0.5)) 
+        
+            next();
+            
+        setTimeout(() => {music_tumb()}, 1000);
+
+  };
+   music_tumb();
+  
+  
+  function play_this(id) {
+  
+         chosen.pause(); 
+         
+         chosen.currentTime = 0;
+         
+         let el = document.getElementsByClassName("chosen_string");
+        
+         el[0].classList.remove("chosen_string");
+         
+         number = parseInt(  id.innerHTML ) - 1;
+         
+         chosen = audio[number];
+         
+         eval(`track_${number+1}.classList.add("chosen_string")`);
+
+         chosen.play();
+  
+  };
+  </script>
+  
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Peninsula</title>
+    
+    <link rel="icon" href="../../../images/fac.png" type="image/x-icon" />
+		
+	<style>
+		.place {
+			width: 3vw;
+			height: 1vw;
+			border-radius: 50%;
+			background-color: rgba(255, 255, 255, 0.5);
+			position: relative;
+			transition-duration: .5s;
+			overflow: hidden;
+		}
+		
+		a {
+			margin: auto;
+		}
+		
+		.place:hover {
+			height: 2vw;
+			transform: scale(2);
+			border-radius: 10%;
+			transition-duration: .5s;
+		}
+ 		
+		body {
+			overflow: hidden;
+			background-image: url('../../space.jpg');
+		}
+		
+		#pl-1 {
+			margin-top: -150%;
+			margin-left: 13%;
+		}
+		
+		#pl-2 {
+			margin-top: 0%;
+			margin-left: 63%;
+		}
+		
+		#pl-3 {
+			margin-top: -7%;
+			margin-left: 35%;
+		}
+		
+		#pl-4 {
+			margin-top: 40%;
+			margin-left: 63%;
+		}
+		
+		#pl-5 {
+			margin-top: 2%;
+			margin-left: 10%;
+		}
+		
+		
+		#pl-6 {
+			margin-top: 1%;
+			margin-left: 33%;
+		}
+		
+		
+		#pl-7 {
+			margin-top: 10%;
+			margin-left: 80%;
+		}
+		
+		#pl-8 {
+			margin-top: 10%;
+			margin-left: 13%;
+		}
+		
+		#pl-9 {
+			margin-top: 14%;
+			margin-left: -7%;
+		}
+		
+		#pl-10 {
+			margin-top: 10%;
+			margin-left: 25%;
+		}
+		
+		#pl-11 {
+			margin-top: 18%;
+			margin-left: 83%;
+		}
+		
+		#pl-12 {
+			margin-top: 20%;
+			margin-left: 27%;
+		}
+		
+		#container {
+			/*border: 2px red solid;*/
+			margin: auto;
+		}
+		.contain {
+			margin: -12% 30%;
+		}
+		#map {
+			margin: auto; 
+			transform: perspective(500px) rotateX(45deg); 
+			width: 90%; 
+			height: 90%;
+		}
+	</style>
+		
+</head>
+<body>
+
+<div id="container">
+		<div class="contain">
+		
+			<img id="map" src="fantastic.jpeg" >
+		
+			<div class="place" id="pl-1"><a href="">1</a></div>
+			
+			<div class="place" id="pl-2">2</div>
+			
+			<div class="place" id="pl-3">3</div>
+			
+			<div class="place" id="pl-4">4</div>
+			
+			<div class="place" id="pl-5">5</div>
+			
+			<div class="place" id="pl-6">6</div>
+			
+			<div class="place" id="pl-7">7</div>
+			
+			<div class="place" id="pl-8">8</div>
+			
+			<div class="place" id="pl-9">9</div>
+			
+			<div class="place" id="pl-10">10</div>
+			
+			<div class="place" id="pl-11">11</div>
+			
+			<div class="place" id="pl-12">12</div>
+		
+		</div>
+		
+</div>
+<script>
+
+if ((window.innerHeight - window.innerWidth) >0) {
+ 
+	container.style.width = window.innerWidth + "px";
+	
+	container.style.height= window.innerWidth + "px"; 
+ 
+} else {
+
+	container.style.width = window.innerHeight + "px";
+	
+	container.style.height= window.innerHeight + "px"; 
+}; 
+
+</script>
+</body>
+</html>

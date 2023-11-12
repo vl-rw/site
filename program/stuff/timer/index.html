@@ -1,0 +1,251 @@
+<html>
+  <head>
+    <title>Timer</title>
+    <meta content="">
+	   <link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+    <style>
+  #half {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 10px;
+  }
+  #half div {
+  width: 50%;
+  height: 90%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  }
+  #third_part {
+  width: 90%;
+  height: 20%;
+  margin: auto;
+
+  }
+  .element {
+  border: 2px black solid;
+  border-radius: 20px;
+  }
+  
+  /* start filling the first element*/
+  #circle {
+  height: 100%;
+  border-radius: 50%;
+  //border: 2px black solid;
+  margin-left: 25%;
+  margin-top: 2%;
+  }
+  .number {
+  position: absolute;
+  margin-left: 11%;
+    margin-top: 1%;
+  width: 10px !important;
+  height: 40% !important;
+  }
+  .arrow div {
+  background-color: black;
+  border-raduis: 5px;
+  }
+  .element {
+  padding: auto;
+  }
+  button {
+  font-size: 30px; 
+  width: 200px;
+  }
+  .element {
+    font-size: 50px; 
+    padding: auto;
+  }
+  /* add dark mode */
+  
+      .dark  {
+    	filter: invert(1);
+    }
+    </style>
+  </head>
+  <body id="body">
+  
+  <div id="half" >
+  <div id="first_part"  class="element">
+  
+  <div id="circle">
+  
+  <div class="number arrow" id="arrow_hour">
+  
+  <div style="margin-top:1000%; height: 25%; width: 10px;">
+  
+  <div style="margin: auto; height: 8px; width: 8px; background-color: yellow; border-radius: 50%; "></div>
+  
+  </div>
+  
+  </div>
+  <div class="number arrow" id="arrow_minute">
+  
+  <div style="margin-top:800%; height: 35%; width: 5px;"></div>
+  
+  </div>
+  <div class="number arrow" id="arrow_second">
+  
+  <div style="margin-top:600%;; height: 45%; width: 1px;"></div>
+  
+  </div>
+  
+  <div class="number" style="transform: rotate(0deg)">12</div>
+  <div class="number" style="transform: rotate(30deg)">1</div>
+  <div class="number" style="transform: rotate(60deg)">2</div>
+  <div class="number" style="transform: rotate(90deg)">3</div> 
+  <div class="number" style="transform: rotate(120deg)">4</div>
+  <div class="number" style="transform: rotate(150deg)">5</div>
+  <div class="number" style="transform: rotate(180deg)">6</div>
+  <div class="number" style="transform: rotate(210deg)">7</div> 
+  <div class="number" style="transform: rotate(240deg)">8</div>
+  <div class="number" style="transform: rotate(270deg)">9</div>
+  <div class="number" style="transform: rotate(300deg)">10</div>
+  <div class="number" style="transform: rotate(330deg)">11</div>   
+  
+  </div>
+  
+  </div>
+  <div id="second_part"  class="element" style="font-size: 36px; ">
+  <h2 id="time_numbers" > If you see this, smth went wrong</h2>
+  <span id="mus_label"> Choosen sound: kaspersky</span><br>
+  <button onclick="sound.src='kaspersky.mp3'; mus_label.textContent = 'Choosen sound: ' + this.textContent; ">kaspersky</button> <br>
+  <button onclick="sound.src='music.mp3'; mus_label.textContent = 'Choosen sound: ' + this.textContent; ">music</button><br>
+  <button onclick="sound.src='siren.mp3'; mus_label.textContent = 'Choosen sound: ' + this.textContent; ">siren #1</button><br>
+  <button onclick="sound.src='siren2.mp3'; mus_label.textContent = 'Choosen sound: ' + this.textContent; ">siren #2</button><br>
+  <button onclick="sound.src='windows.mp3'; mus_label.textContent = 'Choosen sound: ' + this.textContent; ">windows</button><br>
+  <button onclick="sound.pause();sound.currentTime = 0;" style="background-color: red;">stop</button><br>
+   <button onclick="dark_mode()" id="dark_butt" style="background-color: navy; color: white">Dark mode</button>
+  </div>
+  
+  </div>
+  <div id="third_part"  class="element">
+	<!--
+  <textarea id = "textarea" style="margin-left: 10%; width: 80%; height: 95%; font-size: 36px;" placeholder="Type necessary time to start a timer, for eg: 10:22:10"></textarea>
+  -->
+  
+  
+<form style="margin: auto">
+  <label>Choose a timer time:</label>
+  <select name="cars" id="hour" style="font-size: 50px">
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+    <option>21</option>
+    <option>22</option>
+    <option>23</option>
+  </select>
+  
+  <select id="minute" style="font-size: 50px">
+<option>0</option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option> <option>6</option> <option>7</option> <option>8</option> <option>9</option> <option>10</option> <option>11</option> <option>12</option> <option>13</option> <option>14</option> <option>15</option> <option>16</option> <option>17</option> <option>18</option> <option>19</option> <option>20</option> <option>21</option> <option>22</option> <option>23</option> <option>24</option> <option>25</option> <option>26</option> <option>27</option> <option>28</option> <option>29</option> <option>30</option> <option>31</option> <option>32</option> <option>33</option> <option>34</option> <option>35</option> <option>36</option> <option>37</option> <option>38</option> <option>39</option> <option>40</option> <option>41</option> <option>42</option> <option>43</option> <option>44</option> <option>45</option> <option>46</option> <option>47</option> <option>48</option> <option>49</option> <option>50</option> <option>51</option> <option>52</option> <option>53</option> <option>54</option> <option>55</option> <option>56</option> <option>57</option> <option>58</option> <option>59</option>
+  </select>
+  
+  <select id="second" style="font-size: 50px">
+<option>0</option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option> <option>6</option> <option>7</option> <option>8</option> <option>9</option> <option>10</option> <option>11</option> <option>12</option> <option>13</option> <option>14</option> <option>15</option> <option>16</option> <option>17</option> <option>18</option> <option>19</option> <option>20</option> <option>21</option> <option>22</option> <option>23</option> <option>24</option> <option>25</option> <option>26</option> <option>27</option> <option>28</option> <option>29</option> <option>30</option> <option>31</option> <option>32</option> <option>33</option> <option>34</option> <option>35</option> <option>36</option> <option>37</option> <option>38</option> <option>39</option> <option>40</option> <option>41</option> <option>42</option> <option>43</option> <option>44</option> <option>45</option> <option>46</option> <option>47</option> <option>48</option> <option>49</option> <option>50</option> <option>51</option> <option>52</option> <option>53</option> <option>54</option> <option>55</option> <option>56</option> <option>57</option> <option>58</option> <option>59</option>
+  </select>
+</form>
+  <audio src="kaspersky.mp3" id="sound"></audio>
+  </div>
+  
+  <script>
+  
+	
+	let timer_old = '';
+	
+	function clock() {
+	
+	let t = new Date;
+	
+	let h = t.getHours();
+	
+	if (h<10) h = "0"+ h;
+	
+	let m = t.getMinutes();
+	
+	if (m<10) m = "0"+ m;
+	
+	let s = t.getSeconds();
+	
+	if (s<10) s = "0"+ s;
+	
+	//console.log(h + ':' + m + ':' + s);
+	
+	time_numbers.textContent = h + ':' + m + ':' + s;
+	
+	arrow_hour.style.transform = "rotate(" + h*30 + "deg)";
+	
+	arrow_minute.style.transform = "rotate(" + m*6 + "deg)";
+	
+	arrow_second.style.transform = "rotate(" + s*6 + "deg)";
+	
+	// timer
+	
+	let h0 = 0;
+	
+	let m0 = 0;
+	
+	let s0 = 0;
+	
+	
+	//timer_time = textarea.value.split(':');
+		
+	h0 = hour.value; m0 = minute.value; s0 = second.value;
+
+	
+	if ( (parseInt(h)==parseInt(h0)) && (parseInt(m)==parseInt(m0)) && (parseInt(s)==parseInt(s0)) ) {
+	
+	console.log("timer_time!!!!!!");
+	
+	sound.play();
+	
+	};
+	
+	setTimeout(()=>{clock()}, 1000);
+	
+	};
+	
+	clock();
+	
+	
+	
+	switcher = false;
+function dark_mode(){
+if (!switcher) {
+	body.classList.add("dark");
+	body.style.backgroundColor="#0f0f0d";
+	dark_butt.textContent="Light Mode";
+};
+if (switcher) {
+	body.classList.remove("dark");
+	body.style.backgroundColor="#f0f0f2";	
+	dark_butt.textContent="Night Mode";
+};
+switcher = !switcher;
+
+} 
+  </script>
+  
+  
+  </body>
+</html>

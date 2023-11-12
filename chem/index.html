@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="../images/fac.png" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  	box-sizing: border-box;
+}
+
+body {
+  	margin: 0;
+  	font-family: Arial;
+  	font-size: 17px;
+}
+
+#myVideo {
+  	position: fixed;
+  	margin: auto;
+}
+.vertical-oriented {
+  	height: 100vh;
+  	width: auto; 
+}
+.horizontal-oriented {
+  	height: auto;
+  	width: 100vw; 
+}
+
+.content {
+  	position: fixed;
+  	bottom: 0;
+  	background: rgba(0, 0, 0, 0.5);
+  	color: #f1f1f1;
+  	width: 100%;
+  	padding: 20px;
+}
+
+button {
+  	width: 200px;
+  	font-size: 18px;
+  	padding: 10px;
+  	border: none;
+  	background: #000;
+  	color: #fff;
+  	cursor: pointer;
+  	margin: 2px;
+  	border-radius: 5px;
+}
+
+button:hover {
+  	background: #ddd;
+  	color: black;
+}
+#text {
+	position: fixed;
+	color: black;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: white;
+	margin: 7%;
+	font-size: 48px;
+}
+
+a {
+	text-decoration: none;
+	width: 5%;
+	height: 2%;
+	border: 1px black solid;
+	border-radius: 20px;
+	background-color: grey;
+	color: white;
+	padding: .5%;
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+  <source src="chemistry.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+
+<div id="text">
+
+Push buttons below to see information.
+
+</div>
+
+
+<div class="content">
+  
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+  
+  <button onclick="pelmeni()">Пельмени#1</button>
+
+  <button onclick="pelmeni1()">Пельмени#2</button>
+  
+  <button onclick="travlenie()">Травление</button>
+  
+  <button onclick="lorem()">lorem</button>
+  
+  <button onclick="ph()">Ph</button>
+  
+  <button onclick="table_hex()">table_hex</button>
+  
+  <button onclick="spirit()">spirit</button>
+  
+  <button onclick="dna_rus()">DNA_rus</button>
+  <!--
+  <button onclick="alert('empty')">empty</button>
+  
+  <button onclick="alert('empty')">empty</button>
+  
+  <button onclick="alert('empty')">empty</button>
+  
+  <button onclick="alert('empty')">empty</button>
+  -->
+</div>
+
+<script>
+let video = document.getElementById("myVideo");
+let btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+};
+
+function pelmeni() {
+
+text.innerHTML = `
+
+<h1>Пельмени</h1>
+<ul>
+<li>закипятить полный чайник</li>
+<li>залить воды на 6</li>
+<li>на пару</li>
+<li>на 30 минут</li>
+<li>смазать маслом дуршлаг</li>
+<li>насыпать пельменей в 1 слой</li>
+<li>ждать писка</li>
+</ul>
+
+`;
+
+};
+
+function pelmeni1() {
+
+text.innerHTML = `
+
+<ul>
+<li>Кастрюля широкая, чайник закипятить</li>
+<li>Вылить кипяток, долть холодной до половины</li>
+<li>1 ст. ложка соли</li>
+<li>Закрыть крышкой, ждать закипания</li>
+<li>Вытяжка</li>
+<li>2 ст. ложки растительного масла</li>
+<li>скинуть пельмени</li>
+<li>мешать до всплытия</li>
+<li>Закипело? 1 ст. холодной воды</li>
+<li>Закипело? 1 мин. и в дуршлаг</li>
+
+
+</ul>
+
+`;
+
+};
+	
+function travlenie() {
+
+text.innerHTML = `
+
+<h1>Травление</h1>
+<ul>
+<li>Емкость - баночка для мочи 100 мл.</li>
+<li>Ушло около 5х часов.</li>
+<li>10 кубов уксуса</li>
+<li>10 грамм соли</li>
+<li>1 куб перекиси</li>
+<li>воды - до 100 мл</li>
+</ul>
+
+`;
+
+};
+
+function lorem() {
+
+text.innerHTML = `Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.
+<br><br>
+Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.
+<br><br>`;
+
+};
+
+
+function ph() {
+
+text.innerHTML = "<img style='width: 120%;' src='ph.png' >";
+
+};
+
+
+  
+function dna_rus() {
+
+text.innerHTML = "<img style='width: 120%;' src='IMG_20230401_210458_962.jpg' >";
+
+};
+
+function spirit() {
+
+text.innerHTML = "C<sub>2</sub>H<sub>5</sub>-OH<br><br>";
+
+text.innerHTML += "&#x2800;&#x2800;H&#x2800;&#x2800;H<br>&#x2800;&#x2800;|&#x2800;&#x2800;|<br>";
+
+text.innerHTML += "H - C - C - OH<br>&#x2800;&#x2800;|&#x2800;&#x2800;|<br>&#x2800;&#x2800;H&#x2800;&#x2800;H";
+
+};
+
+function table_hex() {
+
+text.innerHTML = "<a href='PeriodicTableExtended.png'>long version</a> <a href='1799b148edd4666995b3dfea168dad5ea51ed620-2592x1944.svg'>round one</a>  <a href='kruglaia-tablitsa-mendeleeva-1.webp'>stadium</a> ";
+
+text.innerHTML += "<img style='width: 70vw;' src='NeonHoneycombPeriodicTableWHex2017.png' >";
+
+};
+
+
+
+
+//( (window.innerWidth - window.innerHeight) > 0 ) ? {video.classList.add("horizontal-oriented"); text.style.fontSize = "48px"} : {video.classList.add("vertical-oriented"); text.style.fontSize = "28px"};
+
+if ( (window.innerWidth - window.innerHeight) > 0 ) {
+
+	video.classList.add("horizontal-oriented");
+	
+	text.style.fontSize = "48px"
+
+} else {
+
+	video.classList.add("vertical-oriented");
+	
+	text.style.fontSize = "28px";
+
+};
+
+</script>
+
+</body>
+</html> 

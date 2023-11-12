@@ -1,0 +1,456 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="windows-1252">
+    
+    <title>Python</title>
+    <link rel="icon" href="../images/fac.png" type="image/x-icon" />
+<style>
+
+@font-face {
+font-family:  libra_bt;
+src: url(./py/libra_bt.ttf);
+}
+body {
+margin: 2%;
+background-image: url(./py/papyrus.jpg);
+}
+h1, h2, button, #screen {
+font-family: libra_bt;}
+h1 {
+color: #000;
+font-size: 90px;
+margin: auto;
+}
+button {
+width: 200px;
+height: 40px;
+}
+.button-link {
+width: 22%;
+}
+.container {
+display: flex;
+flex-direction: row;
+}
+#screen {
+margin-left: 10%;
+max-height: 40%;
+background: rgba(255, 255, 255, 0.8);
+border-radius: 5px;
+width: 65%;
+padding: 2%;
+}
+.list {
+width: 150px;
+}
+  
+</style>
+</head>
+<body>
+
+<h1>Python Scripts</h1>
+<h2>Links</h2>
+<button onclick="window.open('https://brython.info/tests/console.html?lang=en')" class="button-link">Online onsole 🢅</button>
+
+<button onclick="window.open('py/br_cdn.html')" class="button-link">Example brython cdn 🢅</button>
+
+<button onclick="window.open('py/br_loc.html')" class="button-link">Example brython local 🢅</button>
+
+<button onclick="window.open('py/abcdef.html')" class="button-link">Additional example 🢅</button>
+
+<h2>Scripts</h2>
+<br><br><br>
+
+<div class="container">
+
+<div class="list">
+
+<button onclick="convert();print();">Convet .py to .html</button><br><br>
+
+<button onclick="liouville();print();">Liouville</button><br><br>
+
+<button onclick="pyqt5();print();">PyQt5</button><br><br>
+
+<!--<button onclick="math();print();">Math</button><br><br>-->
+
+<button onclick="combine();print();">Combine processes</button><br><br>
+
+<button onclick="signal();print();">Signal</button><br><br>
+
+<button onclick="try_f();print();">Try</button><br><br>
+
+<button onclick="xvid();print();">xvid</button><br><br>
+</div>
+
+
+
+<div id="screen">
+gfhh
+</div>
+
+</div>
+<script>
+screen = document.getElementById('screen');
+
+text = "Press buttons to see scripts";
+
+function print() {
+
+screen.innerHTML = text;
+
+};
+print();
+
+
+function liouville(){
+
+text = "";
+text+="#  906180359<br>"
+text+="# replace \"⠀\" with \" \"<br>"
+text+="#  link 1: https://habr.com/ru/companies/vstack/articles/758884/<br>" 
+text+="#  link 2: https://vk.com/@habr-gipoteza-poii-odin-iz-samyh-yarkih-primerov-togo-chto-v-mate<br>" 
+text+="<br>" 
+text+="def prime_factors_with_counts(n):<br>" 
+text+="&#x2800;&#x2800;factors = {} # Словарь для хранения простых множителей и их количества<br>" 
+text+="&#x2800;&#x2800;i = 2<br>" 
+text+="<br>" 
+text+="&#x2800;&#x2800;while i * i <= n:<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;if n % i:<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;i += 1<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;else:<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;n //= i<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;factors[i] = factors.get(i, 0) + 1<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;if n > 1:<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;&#x2800;factors[n] = factors.get(n, 0) + 1<br>" 
+text+="&#x2800;&#x2800;print('returned factor', n, end=\"\\r\")<br>" 
+text+="&#x2800;&#x2800;return factors<br>" 
+text+="&#x2800;&#x2800;<br>" 
+text+="<br>" 
+text+="def liouville(n):<br>" 
+text+="&#x2800;&#x2800;factors_with_counts = prime_factors_with_counts(n)<br>" 
+text+="&#x2800;&#x2800;total_factors = sum(factors_with_counts.values())<br>" 
+text+="&#x2800;&#x2800;return 1 if total_factors % 2 == 0 else -1<br>" 
+text+="<br>" 
+text+="def cumulative_liouville(n):<br>" 
+text+="&#x2800;&#x2800;cumulative_values = []<br>" 
+text+="&#x2800;&#x2800;cumulative_value = 0<br>" 
+text+="&#x2800;&#x2800;for num in range(1, n + 1):<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;liouville_result = liouville(num)<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;cumulative_value += liouville_result<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;cumulative_values.append(cumulative_value)<br>" 
+text+="&#x2800;&#x2800;return cumulative_values<br>" 
+text+="<br>" 
+text+="# Ввод числа N<br>" 
+text+="N = int(input(\"Введите натуральное число N: \"))<br>" 
+text+="<br>" 
+text+="if N < 1:<br>" 
+text+="&#x2800;&#x2800;print(\"Введите число больше или равное 1.\")<br>" 
+text+="else:<br>" 
+text+="&#x2800;&#x2800;output_filename = \"liouville_table.txt\"<br>" 
+text+="with open(output_filename, \"w\") as file:<br>" 
+text+="&#x2800;&#x2800;file.write(\"Число | Разложение на простые множители | Функция Луивилля | Кумулятивная Луивилля\\n\")<br>" 
+text+="&#x2800;&#x2800;file.write(\"-\" * 68 + \"\\n\")<br>" 
+text+="<br>" 
+text+="&#x2800;&#x2800;cumulative_values = cumulative_liouville(N)<br>" 
+text+="&#x2800;&#x2800;for num in range(1, N + 1):<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;factors = prime_factors_with_counts(num)<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;liouville_result = liouville(num)<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;cumulative_result = cumulative_values[num - 1]<br>" 
+text+="<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;factors_str = \" * \".join([f\"{factor}**{count}\" if count > 1 else str(factor) for factor, count in factors.items()])<br>" 
+text+="<br>" 
+text+="&#x2800;&#x2800;file.write(f\"{num:^6} | {factors_str:^36} | {liouville_result:^15} | {cumulative_result:^21}\\n\")<br>" 
+text+="<br>" 
+text+="&#x2800;&#x2800;print(f\"Таблица сохранена в файле '{output_filename}'.\")<br>" 
+
+};
+
+function pyqt5(){
+
+text =  "";
+text +="# replace \"⠀\" with \" \"<br>"
+text+="import sys<br>"
+text+="from PyQt5.QtWidgets import *<br>"
+text+="from PyQt5.QtGui import QIcon, QPixmap<br>"
+text+="from PyQt5.QtCore import Qt #added this stroke<br>"
+text+="<br>"
+text+="import subprocess<br>"
+text+="<br>"
+text+="place = \"/home/pc/Documents/program/pyqt5/\"<br>"
+text+="<br>"
+text+="print(\"Working directory is \" + place)<br>"
+text+="<br>"
+text+="global led<br>"
+text+="<br>"
+text+="led = False<br>"
+text+="<br>"
+text+="class App(QWidget):<br>"
+text+="&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;def __init__(self):<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;super().__init__()<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.title = 'PyQt5 program'<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.left = 1920 + 500<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.top = 200<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.width = 640<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.height = 480<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.initUI()<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;def initUI(self):<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.setWindowTitle(self.title)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.setGeometry(self.left, self.top, self.width, self.height)<br>"
+text+="<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;# Create widget<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;label = QLabel(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;# pixmap = QPixmap(place + 'backgr.jpg')<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;pixmap = QPixmap(place + 'maap.jpg')<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;label.setPixmap(pixmap)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.resize(pixmap.width(),pixmap.height())<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;global button1<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button1 = QPushButton(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button1.setText(\"switch on light\")<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button1.move(64,32)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button1.setGeometry( 120, 20, 200, 30)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button1.clicked.connect(button1_clicked)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;global button2&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button2 = QPushButton(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button2.setText(\"Xonotic\")<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button2.move(64,64)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button2.clicked.connect(button2_clicked)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button2.setGeometry(120, 70, 200, 30)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;global button3&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button3 = QPushButton(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button3.setText(\"start\")<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button3.move(64,32)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button3.setGeometry(120, 120, 200, 30)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button3.clicked.connect(button3_clicked)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;global button4&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button4 = QPushButton(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button4.setText(\"fres & fit\")<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button4.move(64,64)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button4.clicked.connect(button2_clicked)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button4.setGeometry(120, 170, 200, 30)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;global button5&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button5 = QPushButton(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button5.setText(\"EN/RU\")<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button5.move(64,64)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button5.clicked.connect(button5_clicked)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button5.setGeometry(120, 220, 200, 30)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;global button6<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button6 = QPushButton(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button6.setText(\"monitors\")<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button6.move(64,64)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button6.clicked.connect(button5_clicked)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;button6.setGeometry(120, 270, 200, 30)<br>"
+text+="<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;global label5&#x2800;&#x2800;   <br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;label5 = QLabel(self)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;label5.setText(\"<_font color=yellow font-size=22px _>MY WORLD TAKES CARE OF ME<_/font_>\")<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;label5.setGeometry(200, 520, 230, 50)<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;self.show()<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;# switch application off to see the time diff in shell<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;#exit()<br>"
+text+="&#x2800;&#x2800;&#x2800;&#x2800;<br>"
+text+="def button1_clicked():<br>"
+text+="   global led<br>"
+text+="   led = not led<br>"
+text+="   if (led):<br>"
+text+="&#x2800;&#x2800;  subprocess.run([\"xset\", \"led\", \"on\"])<br>"
+text+="&#x2800;&#x2800;  button1.setText(\"switch off light\")<br>"
+text+="   else:<br>"
+text+="&#x2800;&#x2800;  subprocess.run([\"xset\", \"led\", \"off\"])<br>"
+text+="&#x2800;&#x2800;  button1.setText(\"switch on light\")<br>"
+text+="<br>"
+text+="def button2_clicked():<br>"
+text+="   #print(\"Button 2 clicked\")   <br>"
+text+="   subprocess.run([\"sh\", \"/home/pc/Xonotic/xonotic-linux-glx.sh\"])<br>"
+text+="   #b.setText(\"number is: \"+ str(3))<br>"
+text+="   <br>"
+text+="def button3_clicked():<br>"
+text+="   #print(\"Button 2 clicked\")   <br>"
+text+="   subprocess.run([\"chromium\", \"/home/pc/Documents/txt/start.html\"])<br>"
+text+="   #b.setText(\"number is: \"+ str(3))<br>"
+text+="&#x2800;&#x2800;  <br>"
+text+="def button4_clicked():<br>"
+text+="   #print(\"Button 2 clicked\")   <br>"
+text+="   subprocess.run([\"chromium\", \"https://rumble.com/freshandfit\"])<br>"
+text+="   #b.setText(\"number is: \"+ str(3))<br>"
+text+="&#x2800;&#x2800;  <br>"
+text+="def button5_clicked():<br>"
+text+="   #print(\"Button 2 clicked\")   <br>"
+text+="   subprocess.run([\"setxkbmap\",  \"-layout\", \"us,ru\", \"-option\",  \"grp:alt_shift_toggle\"])<br>"
+text+="   #b.setText(\"number is: \"+ str(3))<br>"
+text+="<br>"
+text+="def button6_clicked():<br>"
+text+="   #print(\"Button 2 clicked\")<br>"
+text+="   subprocess.run([\"sudo\", \"sh\", \" monitor.sh\"])<br>"
+text+="   #b.setText(\"number is: \"+ str(3))<br>"
+text+="<br>"
+text+="if __name__ == '__main__':<br>"
+text+="&#x2800;&#x2800;app = QApplication(sys.argv)<br>"
+text+="&#x2800;&#x2800;ex = App()<br>"
+text+="&#x2800;&#x2800;sys.exit(app.exec_())<br>"
+};
+
+
+function math(){
+
+text =  "math";
+
+};
+
+function signal(){
+
+text =  "";
+text +="# replace \"⠀\" with \" \"<br>"
+text+="import time<br>" 
+text+="import random<br>" 
+text+="<br>" 
+text+="number = random.randint(19, 99)<br>" 
+text+="<br>" 
+text+="def print_blinks (longitude, count):<br>" 
+text+="&#x2800;&#x2800;for  i in range (0, count):<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;print (\"*\", end=\"\\r\")<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;time.sleep(longitude)<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;print (\" \", end=\"\\r\")<br>" 
+text+="&#x2800;&#x2800;&#x2800;&#x2800;time.sleep(longitude)<br>" 
+text+="<br>" 
+text+="decimal = int (number/10)<br>" 
+text+="singles = int (number%10)<br>" 
+text+="if (singles == 0):<br>" 
+text+="&#x2800;&#x2800;singles = 1<br>" 
+text+="<br>" 
+text+="time.sleep(2)<br>" 
+text+="print_blinks(.7, decimal)<br>" 
+text+="time.sleep(5)<br>" 
+text+="print_blinks(.3, singles)<br>" 
+text+="<br>" 
+text+="time.sleep(5)<br>" 
+text+="print(number)"
+
+};
+
+function try_f(){
+
+text = ''
+text+="# replace \"⠀\" with \" \"<br>"
+text +=  "import sys<br><br>";
+text +=  "try:<br>";
+text +=  "&#x2800;&#x2800;f = open('myfile.txt')<br>";
+text +=  "&#x2800;&#x2800;s = f.readline()<br>";
+text +=  "&#x2800;&#x2800;i = int(s.strip())<br><br>";
+text +=  "except OSError as err:<br>";
+text +=  "&#x2800;&#x2800;print(\"OS error:\", err)<br>";
+text +=  "except ValueError:<br>";
+text +=  "&#x2800;&#x2800;print(\"Could not convert data to an integer.\")<br>";
+text +=  "except Exception as err:<br>";
+text +=  "&#x2800;&#x2800;print(f\"Unexpected {err=}, {type(err)=}\")<br>";
+text +=  "&#x2800;&#x2800;raise";
+
+};
+
+function combine(){
+
+text ="";
+text+="import subprocess<br>"
+text+="<br>"
+text+="subprocess.run(\"python3 new_shot.py & python3 page_server.py\", shell=True)<br><br>"
+text+="# you can two parallel processes at once<br>"
+text+="# of course, each canlaunch many processes too"
+
+};
+
+function convert(){
+
+text =  "";
+text +=  "<ul>";
+text +=  "<li>replace \"\\\" with \"\\\\\"</li>";
+text +=  "<li>replace \" with \\\"</li>";
+text +=  "<li>replace <s>SPACE and</s> (yes, use tab and not space for program strucure) TAB with word combined with & # x 2 8 0 0 ; characters</li>";
+text +=  "<li>replace \"<br>\" with \">br<\"\" <br> text += \"</li>";
+text +=  "<li>add text +=\"# replace \\\"⠀\\\" with \\\" \\\"<_br_>\"</li>";
+text +=  "<li>element.innerHTML = text</li>";
+text +=  "</ul>";
+};
+
+function xvid(){
+
+text = ""
+text += "# replace \"⠀\" with \" \"<br>"
+text += "# pip3 install requests"
+text += "# it is not a standard library"
+text += " import time<br>"
+text += "import requests<br>"
+text += "import urllib.request<br>"
+text += "&#x2800;<br>"
+text += "f = open(\"links_here.txt\", \"r\")<br>"
+text += "text = f.read()<br>"
+text += "#print(text)<br>"
+text += "list = text.split('\\n')<br>"
+text += "#print(list)<br>"
+text += "f.close();<br>"
+text += "<br>"
+text += "print(len(text), \" bytes\")<br>"
+text += "<br>"
+text += "f = open(\"log\", \"a\")<br>"
+text += "f.write(str(len(text)))<br>"
+text += "f.write(\" bytes\")<br>"
+text += "f.write('\\n')<br>"
+text += "f.close()<br>"
+text += "<br>"
+text += "list_of_links = []<br>"
+text += "<br>"
+text += "for element in list:<br>"
+text += "&#x2800;if '/video' in element:<br>"
+text += "&#x2800;&#x2800;list_of_links.append(element)<br>"
+text += "<br>"
+text += "print(len(list_of_links), \" links\")<br>"
+text += "f = open(\"log\", \"a\")<br>"
+text += "f.write(str(len(list_of_links)))<br>"
+text += "f.write(\" links\")<br>"
+text += "f.write('\\n')<br>"
+text += "f.close()<br>"
+text += "<br>"
+text += "for index, item in enumerate(list_of_links):<br>"
+text += "&#x2800;print(\"Element \", (index+1), \" of \", len(list_of_links), \" - \", item)<br>"
+text += "<br>"
+text += "&#x2800;time.sleep(2*3)<br>"
+text += "&#x2800;url = item;<br>"
+text += "<br>"
+text += "&#x2800;title = url.split('/')[4]<br>"
+text += "<br>"
+text += "&#x2800;response = requests.get(url)<br>"
+text += "&#x2800;<br>"
+text += "&#x2800;#print(response.text)<br>"
+text += "&#x2800;<br>"
+text += "&#x2800;if (\"UrlHigh(\" not in response.text):<br>"
+text += "&#x2800;<br>"
+text += "&#x2800;&#x2800;print(\"not found UrlHigh!\")<br>"
+text += "&#x2800;&#x2800;<br>"
+text += "&#x2800;&#x2800;f = open(\"log\", \"a\")<br>"
+text += "&#x2800;&#x2800;f.write(url)<br>"
+text += "&#x2800;&#x2800;f.write(\" - \")<br>"
+text += "&#x2800;&#x2800;f.write(\"not found UrlHigh!\")<br>"
+text += "&#x2800;&#x2800;f.write('\\n\\n')<br>"
+text += "&#x2800;&#x2800;f.close()<br>"
+text += "&#x2800;&#x2800;<br>"
+text += "&#x2800;else:<br>"
+text += "&#x2800;<br>"
+text += "&#x2800;&#x2800;first = response.text.split(\"UrlHigh('\")[1]<br>"
+text += "&#x2800;&#x2800;<br>"
+text += "&#x2800;&#x2800;second = first.split(\"');\")[0]<br>"
+text += "<br>"
+text += "&#x2800;&#x2800;urllib.request.urlretrieve(second, title)<br>"
+};
+
+</script>
+</body>
+</html>

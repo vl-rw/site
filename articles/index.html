@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Articles</title>
+    <link rel="icon" href="../../images/fac.png" type="image/x-icon" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    h1 {
+        display: flex;
+        justify-content: center;
+/*         font-size: 7em; */
+    }
+    .dark  {
+    	filter: invert(1);
+    }
+    div {
+        width: 80%;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a {
+	color: red;
+    	border: 1px solid red; 
+    	border-radius: 5px;   
+    }
+    .anchor {
+    	color: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    a:link, a:visited {
+        /*color: #38488f;*/
+        text-decoration: none;
+    }
+    .command {
+    	font-size: 20px;
+    }
+    .copy {
+    	background: #f0f0f2;
+    	background-size: cover;
+    	background-image: url("./technical/copy.ico");
+    	width: 40px;
+    	height: 40px;
+    	border-radius: 10px;
+    	margin: 0px;
+    	padding: 2px;
+    }
+    .back {
+    	border: 1px solid #404040; 
+    	border-radius: 5px;    
+    	background: #404040;
+   }
+	.zero {
+		display: none;
+	}
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    #body {
+        justify-content: center;
+    }
+    #content {
+        margin-top: -10vh;
+        display: inline;
+        width: 80%;
+        justify-content: center;
+         background: transparent; 
+        z-index: 1;
+
+    }
+    
+    #font_sizer {
+        margin-left: 20%;
+        z-index: 10;
+    }
+    #names {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        border-radius: 5px;
+    }
+    #names > p {
+        border: 1px black solid;
+        border-radius: 15px;
+        padding: 5px;
+        margin: 5px;
+        scrollbar-gutter: auto | stable && both-edges?
+    }
+    #names::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+    #names::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+    #names::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: grey;
+    }
+    #dark_butt {
+        margin-left: 20%;
+    }
+    #controls {
+        margin-top: 5%;
+
+    }
+    
+
+input[type="range"]{
+        -webkit-appearance:none;
+        width:160px;
+        height:20px;
+        margin:10px 50px;
+        background: #fff;
+        background-size:150px 20px;
+        box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        border-radius: 50px;
+        background-position:center;
+        background-repeat:no-repeat;
+        overflow:hidden;
+        outline: none;
+}
+
+input[type="range"]:first-of-type{
+  margin-top:30px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:40px;
+  height:20px;
+  border-radius: 50px;
+  background: #404040;
+  position:relative;
+  z-index:3;
+  box-shadow:0 0 5px 0 rgba(0,0,0,0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:after{
+  content:" ";
+  width:160px;
+  height:10px;
+  position:absolute;
+  z-index:1;
+  right:20px;
+  top:5px;
+}
+
+
+/* https://codepen.io/chancesq/pen/KKVgJZV */
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+button {
+	width: 75px;
+	height: 75px;
+	cursor: pointer;
+	background-color:rgb(118, 118, 118);
+    margin-left: 95%;
+	border: none;
+	border-radius: 50%;
+	transition: 200ms;
+}
+
+button svg {
+	fill: white;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+button:before {
+	content: 'Back to Top';
+	position: absolute;
+	transform: translateX(-50%) translateY(45px);
+	font-size: 15px;
+	transition: 200ms;
+	color: transparent;
+	font-weight: bold;
+}
+
+button:hover {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+	width: 80px;
+	height: 80px;
+}
+
+button:hover::before {
+	color: #fff;
+}
+
+button:hover svg {
+		animation: bounce 2s infinite linear;
+}
+
+@keyframes bounce {
+	0% {transform: translateX(-50%) translateY(-50%)}
+	25% {transform: translateX(-50%) translateY(-65%)}
+	50% {transform: translateX(-50%) translateY(-50%)}
+	75% {transform: translateX(-50%) translateY(-35%)}
+	100% {transform: translateX(-50%) translateY(-50%)}
+}
+
+button:focus {
+	outline: none;
+}
+
+
+
+
+
+
+/*https://codepen.io/andysanchez-dev/pen/GYPevV*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #D8D8D8;
+}
+
+
+h1{
+    font-size: 3em;
+    font-weight: normal;
+}
+
+/* title styles */
+.home-title span{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 1.2;
+}
+
+.home-title span::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(-101%);
+}
+
+.home-title span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(0);
+}
+
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after{
+    animation-delay: 1s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after{
+    animation-delay: 1.5s;
+}
+
+@keyframes a-ltr-after{
+    0% {transform: translateX(-100%)}
+    100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+    0% {transform: translateX(0)}
+    100% {transform: translateX(200%)}
+}
+
+
+
+
+
+</style>    
+</head>
+
+<body id="body">
+
+
+<div id="container">
+
+    <h1  class="home-title" id="1" ><span>Some interesting articles </span></h1>
+    <h1 class="home-title" ><span> I decided to save. </span></h1>
+
+     
+     <div id="controls">
+    
+    <input type="range" min="4" max="72" step="1" value="12" id="font_sizer">  
+     <span> Font Size</span>
+    <a class="back anchor" onClick="dark_mode()" id="dark_butt" href="#">Night Mode</a><br>
+    
+     <p id="names"></p>
+     </div>
+     
+     <div id="content"> <br> <br>There will be an article you'll choose from the top.</div>
+
+
+
+</div>
+
+
+
+<a style="border: none;" href=#1> 
+<button class="noselect"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg></button>
+</a>
+
+
+
+<script src="info.json"></script>
+
+
+<script>
+
+for (let element in info) {
+
+    let p = document.createElement('p');
+    
+    let s = document.createElement('span');
+    
+    s.innerHTML = " ";
+    
+    p.innerHTML = element;
+    
+    p.onclick =  function(){content.innerHTML = info[element];};
+    
+    names.appendChild(p);
+    
+    names.appendChild(s);
+
+};
+
+
+font_sizer.addEventListener("input", (event) => { content.style.fontSize = `${event.target.value}px`; content.style.zIndex = "1";});
+
+
+
+switcher = false;
+
+function dark_mode(){
+if (!switcher) {
+	body.classList.add("dark");
+	body.style.backgroundColor="#0f0f0d";
+	dark_butt.textContent="Light Mode";
+};
+if (switcher) {
+	body.classList.remove("dark");
+	body.style.backgroundColor="#f0f0f2";	
+	dark_butt.textContent="Night Mode";
+};
+switcher = !switcher;
+
+}
+
+</script>
+
+
+</body></html>

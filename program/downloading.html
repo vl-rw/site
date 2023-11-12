@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)https://example.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Downloading</title>
+
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        background-image: url("../images/code.jpg");
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    h1 {
+        margin-left: 30px;
+    }
+    .dark  {
+    	filter: invert(1);
+    }
+    div {
+        width: 60%;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a {
+        color: red;
+    	border: 1px solid red; 
+    	border-radius: 5px;   
+    	margin-left: 20px;
+    	font-size: 0.5em;
+    }
+    .anchor {
+    	color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+    }
+    a:link, a:visited {
+        /*color: #38488f;*/
+        text-decoration: none;
+    }
+    .command {
+    	font-size: 20px;
+    }
+    .copy {
+    	background: #f0f0f2;
+    	background-size: cover;
+    	background-image: url("./technical/copy.ico");
+    	
+    	width: 40px;
+    	height: 40px;
+    	border-radius: 10px;
+    	margin: 0px;
+    	padding: 2px;
+    }
+    .back {
+    	border: 1px solid #404040; 
+    	border-radius: 5px;    
+    	background: #404040;
+   }
+	.zero {
+		display: none;
+	}
+    
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    
+    #table {
+        opacity: 0.8;
+    }
+    
+    details details {
+    margin-left: 5%;
+    }
+
+    </style>    
+</head>
+
+<body id="body">
+<div id="table">
+
+
+
+
+
+
+    <h1>Downloading tricks   <a class="back anchor" onClick="dark_mode()" id="dark_butt" href="#">Night Mode</a><a href="index.html">Back</a><br></h1>
+    
+
+
+     
+     
+     
+     
+     
+<br>
+<details>
+    <summary>
+    
+    Vkontakte
+    
+    </summary>
+    
+    
+<ul>
+
+<!--            <li></li>                -->
+
+<li>Code on page - Look for<br>
+"url240", "url360", "url480"</li>
+
+<li>Replace "\" and " "</li>
+
+
+<li>Get a link like;<br>
+https://vkvd139.mycdn.me/?srcIp=185.75.84.29&pr=40&expires=<br>1659976473695&srcAg=CHROME&fromCache=<br>1&ms=45.136.21.141&type=2&sig=<br>k3x2jPXeXx8&ct=0&urls=45.136.20.150<br>&clientType=13&appId<br>=512000384397&zs=11&id=<br>813781682757
+
+</li>  
+
+
+
+</ul>
+    
+
+    
+</details>
+
+    
+     
+     
+     
+     
+     
+<br>
+<details>
+    <summary>
+    
+    Pinterest
+    
+    </summary>
+    
+    
+<ul>
+
+<!--            <li></li>                -->
+
+<li>ctrl + F</li>
+
+<li>property="og:image" name="og:image" content="</li>
+
+
+
+
+
+</ul>
+    
+
+    
+</details>
+
+    
+     
+     
+     
+     
+     
+<br>
+<details>
+    <summary>
+    
+    Audiobooks
+    
+    </summary>
+    
+    <h2>Some sites have audiobooks. To save time use this code<br>
+    on these sites (list is uncomplete)</h2>
+    
+<br>
+<details>
+    <summary>
+    
+    List of sites supported
+    
+    </summary>
+    
+    
+<ul>
+
+<!--            <li></li>                -->
+
+<li>https://101audiobooks.net/</li>
+
+<li>https://findaudiobook.com/</li>
+
+<li>https://playaudiobooks.com/</li>
+
+<li>https://bigaudiobooks.com/</li>
+
+<li>https://bagofaudio.com/</li>
+
+</ul>
+    
+
+    
+</details>
+
+    
+
+ <br>
+<details>
+    <summary>
+    
+    List of sites supported
+    
+    </summary>
+    
+    
+<ul>
+
+<!--            <li></li>                -->
+
+
+text = document.documentElement.outerHTML.split('endif')[1];<br>
+<br>
+text = text.split('collapseomatic_content')[0];<br>
+<br>
+/*<br>
+or just send chunk of code with mp3 links to 'text' variable;<br>
+<br>
+or even just  text = document.documentElement.outerHTML;<br>
+*/<br>
+<br>
+array = text.split('src="');<br>
+<br>
+for (let i in array) array[i] = array[i].split('"')[0];<br>
+<br>
+text = ''; <br>
+<br>
+for (let i in array) if (array[i].includes("mp3")) text += 'wget "'+array[i]+'" &&  ';<br>
+<br>
+setTimeout(text += 'echo "done"', 500);<br>
+
+<br>
+
+</ul>
+    
+
+    
+</details>   
+</details>
+
+
+
+
+
+
+
+
+
+<br>
+<details>
+    <summary>
+    
+    xvideos
+    
+    </summary>
+    
+
+<h2>Just look for UrlHigh (or sometimes urlLow) to get a link. If you have too many links...</h2>
+<p>Put them into file named <i>links_here.txt</i> and launch one of those scripts:</p>
+
+<!--            <li></li>                -->
+<br>
+<details>
+    <summary>
+    
+    javaScript(node)
+    
+    </summary>
+    
+
+<br>
+
+const https = require('https'); // or 'http' for http:// URLs<br>
+const fs = require('fs');<br>
+<br>
+<br>
+function readURL(url) {  // code for reading html page to data<br>
+   <br>
+    return new Promise((resolve, reject) => {<br>
+        https.get(url, (res) => {<br>
+            const { statusCode } = res;<br>
+            res.setEncoding('utf8');<br>
+            let rawData = '';<br>
+            res.on('data', chunk => rawData += chunk);<br>
+            res.on('end', () => resolve(rawData));<br>
+        }).on('error', (e) => reject(e)); // ошибка -> отклоняем Промис<br>
+    })<br>
+};<br>
+<br>
+<br>
+let fileContent = fs.readFileSync('links_here.txt', 'utf8'); // read the download sheet<br>
+<br>
+ListOfLinks = fileContent.split('\n'); // separate by strokes<br>
+<br>
+let download = ListOfLinks; // doubling the list (for indexating problems)<br>
+<br>
+let html = 'kkfgk'; // why not?<br>
+<br>
+<br>
+for (let strokes=0; strokes < (ListOfLinks.length); strokes++) {<br>
+    if ((ListOfLinks[strokes].includes('xvideos')) && (ListOfLinks[strokes].includes('/video')))  { // necessary site and necessary page of it<br>
+        <br>
+        console.log('We found robust link :');<br>
+<br>
+    } else {<br>
+        <br>
+        download[strokes]=null; // pointing out trash<br>
+        <br>
+        console.log('Throwing trash....'); //i promise you...<br>
+    };<br>
+};<br>
+<br>
+<br>
+function removeNull(array) {<br>
+    return array.filter(x => x !== null)<br>
+};<br>
+<br>
+download = removeNull(download); // ...as i said!<br>
+<br>
+console.log(download);<br>
+<br><br>
+
+let count = 0;<br>
+
+let downloading = function(url, dest, cb) { //function for downloading files - with state texts<br>
+  let file = fs.createWriteStream(dest);<br>
+  https.get(url, function(response) {<br>
+    response.pipe(file);<br>
+<br>
+    file.on('finish', function() {<br>
+      file.close(cb);<br>
+      console.log('Got ' + dest + '.');<br>
+      count++;<br>
+      console.log('Downloaded '+count+' files out of '+download.length);<br>
+      if (count == download.length) {<br>
+          console.log('All tasks are completed. Type ".exit" or press Ctrl+C twice to quit the program');<br><br>
+      
+      } else {<br>
+          console.log("Launching " + textCode[(1+count)] + "...");<br>
+          eval(textCode[(1+count)]);<br>
+      };<br>
+    });<br>
+  });<br>
+};<br>
+<br><br>
+
+let textCode = '';<br><br>
+
+console.log('Creating a list of a download tasks.....');<br><br>
+
+for (let strokes = 0; strokes < download.length; strokes++) {  //creating a list of a downloading functions - names and urls<br><br>
+    
+    readURL(download[strokes]).then(data => {<br><br>
+   
+        
+            html = data;<br><br>
+            
+            console.log(download[strokes]);<br><br>
+            
+            console.log(html.length);<br><br>
+            
+            console.log(html);<br><br>
+        
+            let findTitle = ((html.split('title>'))[1]);<br><br>
+            
+            //console.log(findTitle);<br><br>
+    
+            let cutTitle = ((findTitle.split('</'))[0]);<br><br>
+      
+            console.log(cutTitle+'-file is in a downloading order.'+html.length);<br><br>
+            
+
+            let videoFile = (html.split("UrlHigh('"))[1];<br><br>
+    
+            videoFile = (videoFile.split("');"))[0];<br><br>
+            
+            textCode += 'DELETEdownloading("'+videoFile+'", "'+cutTitle+'")'; //yes, no fantasy at all<br><br>
+            
+            
+        })<br>
+};<br><br>
+
+setTimeout(() => {<br><br>
+            console.log('...starting the downloading process.....'+download.length+' STROKES HERE.');<br><br>
+            textCode = textCode.split('DELETE');  // it should be done AFTER creating a list of a downloading functions (↑), so ten seconds is enough<br><br>
+            //counting();<br><br>
+            eval(textCode[1]);<br><br>
+    
+        },<br><br>
+        20 * 1000<br>
+    );<br>
+
+    
+
+    
+</details>
+<br>
+<details>
+    <summary>
+    
+    python
+    
+    </summary>
+    
+
+<br>
+import time<br>
+import requests<br>
+import urllib.request<br><br>
+
+f = open("links_here.txt", "r")<br>
+text = f.read()<br>
+#print(text)<br>
+list = text.split('\n')<br>
+#print(list)<br>
+f.close();<br><br>
+
+print(len(text), " bytes")<br><br>
+
+f = open("log", "a")<br>
+f.write(str(len(text)))<br>
+f.write(" bytes")<br>
+f.write('\n')<br>
+f.close()<br><br>
+
+list_of_links = []<br><br>
+
+for element in list:<br>
+&emsp;        if '/video' in element:<br>
+&emsp;&emsp;                list_of_links.append(element)<br><br>
+                
+
+print(len(list_of_links), " links")<br>
+f = open("log", "a")<br>
+f.write(str(len(list_of_links)))<br>
+f.write(" links")<br>
+f.write('\n')<br>
+f.close()<br><br>
+
+for index, item in enumerate(list_of_links):<br>
+    
+&emsp;        print("Element ", (index+1), " of ", len(list_of_links), " - ", item)<br><br>
+
+&emsp;        time.sleep(2*3)<br>
+&emsp;        url = item;<br><br>
+  
+&emsp;        title = url.split('/')[4]<br><br>
+  
+&emsp;        response = requests.get(url)<br><br>
+  
+&emsp;        first = response.text.split("UrlHigh('")[1]<br>
+&emsp;        second = first.split("');")[0]<br><br>
+  
+&emsp;        urllib.request.urlretrieve(second, title)<br>
+    
+
+    
+</details>
+
+
+    
+
+    
+</details>
+
+
+
+
+
+
+
+
+<script>
+switcher = false;
+function dark_mode(){
+if (!switcher) {
+	body.classList.add("dark");
+	body.style.backgroundColor="#0f0f0d";
+	dark_butt.textContent="Light Mode";
+};
+if (switcher) {
+	body.classList.remove("dark");
+	body.style.backgroundColor="#f0f0f2";	
+	dark_butt.textContent="Night Mode";
+};
+switcher = !switcher;
+
+}
+</script>
+
+</body></html>

@@ -1,0 +1,90 @@
+body { 
+    margin: 2%; 
+    background-image: url(space.jpg); 
+    overflow: hidden;
+}
+#bg {
+    margin: -25%;
+    padding: 15%;
+    overflow: hidden;
+    height: 800px;
+}
+#panel {
+    z-index: 100;
+    font-size: 35px;
+}
+canvas { 
+    margin: 5%;  
+    overflow: hidden;
+}
+.window { 
+    width: 100%; 
+    height: 300%; 
+    overflow: hidden;  
+    position: absolute;
+    margin: -10%; 
+    z-index: -100;
+}
+.hidden {
+    visibility: hidden;
+}
+#map {
+	margin: 2%; 
+	margin-top: -4%;
+	width: 55%; 
+	height: 130%; 
+	position: absolute;
+}
+img {
+	width: 100%;
+	height: 100%;
+}
+.img_map {
+	border-radius: 20px;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 40% 40% ;
+    margin: 15%;
+}
+.dot {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 30px;
+    height: 30px;
+    filter: grayscale(.4);
+}
+.dot:hover {
+    filter: grayscale(0);
+}
+.ship {
+    top: 25%;
+    left: 2%;
+    width: 30px;
+    height: 30px;
+    filter: grayscale(.8);
+}
+.ship:hover {
+    filter: grayscale(0);
+}
+#first_ship {
+    position: absolute;
+    margin-top: 7%;
+    margin-left: -22%;
+}
+#second_ship {
+    position: absolute;
+    margin-top: 9%;
+    margin-left: -16%;
+}
+#third_ship {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: -2%;
+} 
+.orbital_map {
+    width: 20%; 
+    height: 20%; 
+    margin-left: 80%;
+}

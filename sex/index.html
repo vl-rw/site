@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/fac.png" type="image/x-icon" />
+    <title>Tasty links</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+	<header id='head'>
+			Inspired by Rollo Tomassi, the Godfather of the Manosphere.
+	</header>
+      
+
+	<section id='section'></section>
+	
+	<h2>All archive is temporarily <a href="https://mega.nz/folder/WdwgQQrQ#s3cLVicyfN014Nw_YtS98g">there</a>          <a href="../index.html">Go back</a>          <a href="JSON_generator.html">Generator</a></h2>
+            
+
+	<script src="object.json"></script>
+	
+	<script>
+		  "use strict";
+
+	  		function start() {
+
+				const load = document.createElement('img');
+				load.src = '7U06-unscreen.gif';
+				load.id = 'preloader';
+
+				section.appendChild(load);
+            	
+	  		};
+	  		 
+			setTimeout(sortData, 3000, object);
+			start();
+	  		 
+	  		function sortData(object) {
+
+				for (let any=0 ; any < object.length ; any++ ) {
+	  		 	
+	  		 		const Article = document.createElement('article');
+	  		 		const img = document.createElement('img');
+					const img2 = document.createElement('img');
+	  		 		const articleHeader = document.createElement('h2');
+	  		 		const modified = document.createElement('p');
+	  		 		const descript = document.createElement('p');
+	  		 		const cherryHeader = document.createElement('p');
+	  		 		const cherry = document.createElement('p');
+	  		 		const defenceHeader = document.createElement('p');
+	  		 		const defence = document.createElement('p');
+	  		 		
+	  		 		const lin1 = document.createElement('a');
+	  		 		const lin2 = document.createElement('a');
+	  		 		const lin3 = document.createElement('a');
+	  		 		const lin4 = document.createElement('a');
+	  		 		const lin5 = document.createElement('a');
+	  		 		
+
+	  		 		Article.classList.add('article');
+	  		 		
+	  		 		img.src = object[any].image;
+	  		 		
+	  		 		img.classList.add('image');
+	  		 		
+	  		 		
+	  		 		articleHeader.textContent = object[any].name;
+	  		 		
+	  		 		articleHeader.classList.add('name');
+	  		 		
+	  		 		modified.classList.add('unimportant');
+	  		 		
+	  		 		modified.textContent = object[any].modified;
+	  		 		
+	  		 		descript.textContent = object[any].description;
+	  		 		
+	  		 		descript.classList.add('description');
+	  		 		
+	  		 		cherryHeader.textContent = 'Quotes: '
+	  		 		
+	  		 		cherryHeader.classList.add('header');
+	  		 		
+	  		 		cherry.textContent = '• ' + object[any].quote1;
+	  		 		
+	  		 		cherry.classList.add('quote');
+	  		 		
+	  		 		let cherry2 = null;
+	  		 		
+	  		 		if (object[any].quote2) {
+	  		 			cherry2 = document.createElement('p');
+	  		 			cherry2.textContent = '• ' + object[any].quote2;
+	  		 			cherry2.classList.add('quote');
+	  		 		};
+	  		 		
+	  		 		defenceHeader.textContent = "Cope here: ";
+	  		 		defenceHeader.classList.add('header');
+	  		 		
+	  		 		defence.textContent = "• " + object[any].quote3;
+
+	  		 		
+	  		 		defence.classList.add('quote');
+	  		 		let defence2 = null;
+	  		 		if (object[any].quote4) {
+	  		 			defence2 = document.createElement('p');
+	  		 			defence2.classList.add('quote');
+	  		 			defence2.textContent = "• "+ object[any].quote4;
+	  		 		};
+	  		 		
+	  		 		
+	  		 		lin1.textContent = 'Source';
+	  		 		lin1.href = object[any].link1;
+	  		 	
+	  		 		lin2.textContent = 'Mirror';
+	  		 		lin2.href = object[any].link2;
+	  		 	
+	  		 		lin3.textContent = 'Mirror #2';
+	  		 		lin3.href = object[any].link3;
+	  		 	
+	  		 		lin4.textContent = 'WayBack';
+	  		 		lin4.href = object[any].link4;
+	  		 	
+	  		 		lin5.textContent = 'archive';
+	  		 		lin5.href = object[any].link5;
+	  		 		
+	  		 		lin1.classList.add('link');
+	  		 		lin2.classList.add('link');
+	  		 		lin3.classList.add('link');
+	  		 		lin4.classList.add('link');
+	  		 		lin5.classList.add('link');
+	  		 		
+	  		 	
+	  		 		Article.appendChild(articleHeader);
+
+	  		 		Article.appendChild(img);
+
+					   
+	  		 		Article.appendChild(modified);
+
+					
+	  		 		Article.appendChild(descript);
+	  		 		Article.appendChild(cherryHeader);
+	  		 		Article.appendChild(cherry);
+	  		 		if (cherry2) Article.appendChild(cherry2);
+	  		 		
+	  		 		Article.appendChild(defenceHeader);
+	  		 		Article.appendChild(defence);
+	  		 		if (defence2) Article.appendChild(defence2);
+	  		 		
+	  		 		Article.appendChild(lin1);
+	  		 		Article.appendChild(lin2);
+	  		 		Article.appendChild(lin3);
+	  		 		Article.appendChild(lin4);
+	  		 		Article.appendChild(lin5);   
+	  		 	
+	  		 		section.appendChild(Article);
+	  		 	
+	  		 	}
+	  		 	
+	  		 	preloader.remove();
+				
+	  		};
+
+      </script>
+</body>
+</html>

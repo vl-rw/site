@@ -1,0 +1,12 @@
+deb cdrom:[Lubuntu 18.10 _Cosmic Cuttlefish_ - Release amd64 (20181017.2)]/ cosmic main multiverse restricted universe
+deb cdrom:[Lubuntu 18.10 _Cosmic Cuttlefish_ - Release amd64 (20181017.2)]/ stretch main
+deb http://archive.ubuntu.com/ubuntu/ cosmic main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ cosmic-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ cosmic-updates main restricted universe multiverse
+
+deb http://mirror.steadfast.net/ubuntu bionic multiverse
+deb http://mirror.steadfast.net/ubuntu bionic-security multiverse
+deb http://mirror.steadfast.net/ubuntu bionic-updates multiverse
+deb http://mirror.steadfast.net/ubuntu bionic universe
+deb http://mirror.steadfast.net/ubuntu bionic-security universe
+deb http://mirror.steadfast.net/ubuntu bionic-updates universe

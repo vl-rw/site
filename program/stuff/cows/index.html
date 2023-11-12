@@ -1,0 +1,115 @@
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+<style>
+#fon {
+width: 110%;
+height: 110%;
+transition-duration: 2s;
+position: absolute;
+margin: -4%;
+z-index: -11;
+}
+.bak {
+width: 110%;
+height: 110%;
+}
+body {
+overflow: hidden;
+color: white;
+
+}
+.container {
+margin: 2% 40%;
+padding: 2% 2%;
+text-align: center;
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 2%;
+
+}
+#cow {
+width: 100%;
+}
+#illustration {
+border-radius: 20%;
+opacity: 0.8;
+overflow: hidden;
+}
+#wiki {
+font-size: inherit;
+border: none;
+border-radius: none;
+background-color: transparent;
+
+color: blue;
+text-decoration: inerit;
+}
+a {
+font-size: 20px;
+border: 1px solid gray;
+border-radius: 8px;
+background-color: gray;
+padding: 4px;
+color: black;
+text-decoration: none;
+}
+.ancors {
+width: 100%;
+overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div id="fon">
+<img class="bak" src="5454204.jpg" />
+</div>
+
+<div class="container">
+
+<h1>Hello there!</h1>
+<p>This is the first spherical cow farm in a deep vacuum</p>
+
+<p>There are two graphical versions:</p>
+<a href="graphic.html">Colored</a> <a href="abstract.html">Light</a>
+
+
+
+<p> Yes, I had no better idea than make <a id="wiki" href="https://en.wikipedia.org/wiki/Spherical_cow">this.</a></p>
+
+
+
+<div id="illustration">
+<img id="cow" onClick="audio.play();" src="Spot_the_cow.gif" />
+</div>
+<p> In fact, it is a kind of a biological model - <br>
+with limited resources, death and reproduction.  <br>
+You can add some units and see how many can<br> survive, 
+and what is bearing capacity of a crater is.</p>
+
+
+
+</div>
+<script>
+left = true;
+function moving(){
+
+	let backgr = document.querySelector('#fon');
+
+	if (left) backgr.style.marginLeft = '-10%';
+	if (!left) backgr.style.marginLeft = '-1%';
+
+	setTimeout(()=>{moving()}, 1000);
+	left = !left;
+};
+moving();
+
+
+let audio = new Audio('moo.mp4');
+audio.volume = 0.2;
+</script>
+
+
+
+</body>
+</html>

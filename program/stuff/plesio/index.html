@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+	    <meta charset="UTF-8" />
+	    <title>Test Aquarium</title>
+<style>
+#ground {
+	width: 1000px;
+	height: 500px;
+	border: 1px solid black;
+	position: absolute;
+	background-image: url(water.png);
+	border-radius: 5px;
+}
+#player {
+	transition-duration: .2s;
+}
+#log {
+	width: 100px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#controls {
+	position: absolute;
+	margin-top: 0px;
+	margin-left: 1010px;
+	border: 1px solid black;
+	width: 300px;
+	height: 480px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+input {
+	width: 100px;
+}
+button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+</style>
+</head>
+<body id="body">
+
+
+
+<!--
+<button onClick="virtualPhysics()">launch</button>
+-->
+
+<div id="ground">
+	<div id="player">
+		<img id="sprite" src = "plesio.png" >
+	</div>
+</div>
+
+<div id="controls">
+	<h2>use Ⓦ, Ⓐ, Ⓢ, Ⓓ </h2>
+
+	<label for="name">jump (number, 200):</label>
+	<input type="text" id="jumpHeightText" name="name"  placeholder="200"><br>
+	<!-- required minlength="4" maxlength="8" size="10"-->
+
+	<label for="name">step  len  (number, 6):</label>
+	<input type="text" id="stepSize" name="name"  placeholder="6"><br>
+
+	<label for="name">weight  (number, 3):</label>
+	<input type="text" id="weight" name="name"  placeholder="3"><br>
+
+	<h2>change frequency</h2>
+
+	<label for="name">freq  (number, 150):</label>
+	<input type="text" id="freq" name="name"  placeholder="150"><br>
+
+	<h2>change keys to move ( use this label)</h2>
+
+	<div id="log"></div>
+
+	<label for="name">upp key  (text, KeyW):</label>
+	<input type="text" id="upKey" name="name"  placeholder="KeyW"><br>
+
+	<label for="name">dow key  (text, KeyS):</label>
+	<input type="text" id="downKey" name="name"  placeholder="KeyS"><br>
+
+	<label for="name">left key  (text, KeyA):</label>
+	<input type="text" id="leftKey" name="name"  placeholder="KeyA"><br>
+
+	<label for="name">righ key  (text, KeyD):</label>
+	<input type="text" id="rightKey" name="name"  placeholder="KeyD"><br>
+
+<button 
+	onClick="if ((parseInt(player.style.marginTop) - playerJumpHeight) < 0 ) {player.style.marginTop = '0px';} else if  ((parseInt(player.style.marginTop) - playerJumpHeight) >playerMaxDrown) {player.style.marginTop = playerMaxDrown +'px';} else {player.style.marginTop = (parseInt(player.style.marginTop) - playerJumpHeight) + 'px';};"
+	>up</button>
+
+<button 
+	onClick="if ((parseInt(player.style.marginTop) + playerStepSize) < 0 ) {player.style.marginTop = '0px';} else if  ((parseInt(player.style.marginTop) + playerStepSize) >playerMaxDrown) {player.style.marginTop = playerMaxDrown +'px';} else {player.style.marginTop = (parseInt(player.style.marginTop) + playerStepSize) + 'px';};"
+	>down</button>
+
+<button 
+	onClick="sprite.style.transform = 'scaleX(-1)'; 	if (((parseInt(player.style.marginLeft) - playerStepSize) > (playerSpriteRight - playerSpriteWidth))) {	player.style.marginLeft = ( playerSpriteRight - playerSpriteWidth)+ 'px';	} else if ((parseInt(player.style.marginLeft) - playerStepSize) < 0) {player.style.marginLeft ='0px';	} else { player.style.marginLeft = (parseInt(player.style.marginLeft) - playerStepSize) + 'px';	};"
+	>left</button>
+
+<button 
+	onClick="sprite.style.transform = 'scaleX(1)';	if ((parseInt(player.style.marginLeft) + playerStepSize) > (playerSpriteRight - playerSpriteWidth)) {player.style.marginLeft = ( playerSpriteRight - playerSpriteWidth)+ 'px';} else if ((parseInt(player.style.marginLeft) + playerStepSize) < 0) {player.style.marginLeft ='0px';	} else {		player.style.marginLeft  = (parseInt(player.style.marginLeft) + playerStepSize)  + 'px';	};"
+	>right</button>
+
+
+</div>
+
+
+<script>
+
+playerSpriteWidth = 40;
+playerSpriteHeight = 40;
+
+playerMaxDrown = 392;
+playerSpriteRight = 1000;
+
+//playerJumpHeight = 200;
+//playerStepSize = 6;
+
+player.style.marginLeft = '10px';
+player.style.marginTop = 100 + 'px';
+
+player.style.width = playerSpriteWidth+'px';
+player.style.height = playerSpriteHeight+'px';
+
+body.addEventListener('keypress', logKey);
+
+
+
+function logKey(e) {
+
+upCommand = upKey.value;
+if (!upCommand) upCommand = "KeyW";
+
+leftCommand = leftKey.value;
+if (!leftCommand) leftCommand = "KeyA";
+
+downCommand = downKey.value;
+if (!downCommand) downCommand = "KeyS";
+
+rightCommand = rightKey.value;
+if (!rightCommand) rightCommand = "KeyD";
+
+
+  if (e.code ==leftCommand) {
+	sprite.style.transform = "scaleX(-1)";
+	
+	if (((parseInt(player.style.marginLeft) - playerStepSize) > (playerSpriteRight - playerSpriteWidth))) {
+		player.style.marginLeft = ( playerSpriteRight - playerSpriteWidth)+ 'px';
+	} else if ((parseInt(player.style.marginLeft) - playerStepSize) < 0) {
+		player.style.marginLeft ='0px';
+	} else {
+		player.style.marginLeft = (parseInt(player.style.marginLeft) - playerStepSize) + 'px';
+	};
+
+  };
+
+  if (e.code ==rightCommand) {
+	sprite.style.transform = "scaleX(1)";
+	
+	if ((parseInt(player.style.marginLeft) + playerStepSize) > (playerSpriteRight - playerSpriteWidth)) {
+		player.style.marginLeft = ( playerSpriteRight - playerSpriteWidth)+ 'px';
+	} else if ((parseInt(player.style.marginLeft) + playerStepSize) < 0) {
+		player.style.marginLeft ='0px';
+	} else {
+		player.style.marginLeft  = (parseInt(player.style.marginLeft) + playerStepSize)  + 'px';
+	};
+
+  };
+
+
+
+
+  if (e.code ==downCommand) {
+	if (	(parseInt(player.style.marginTop) + playerStepSize) < 0   ) {
+		player.style.marginTop = "0px";
+	} else if  ((parseInt(player.style.marginTop) + playerStepSize) > playerMaxDrown) {
+		player.style.marginTop = playerMaxDrown +"px";
+	} else {
+		player.style.marginTop = (parseInt(player.style.marginTop) + playerStepSize) + 'px';
+	};
+  };
+
+  if (e.code ==upCommand) {
+	if (	(parseInt(player.style.marginTop) - playerJumpHeight) < 0   ) {
+		player.style.marginTop = "0px";
+	} else if  ((parseInt(player.style.marginTop) - playerJumpHeight) > playerMaxDrown) {
+		player.style.marginTop = playerMaxDrown +"px";
+	} else {
+		player.style.marginTop = (parseInt(player.style.marginTop) - playerJumpHeight) + 'px';
+	};
+
+  };
+
+  log.textContent = ` ${e.code}`;
+};
+
+heightSwitcher = false;
+sprite.style.width = '40px';
+
+function virtualPhysics() {
+	heightSwitcher = !heightSwitcher;
+	if (heightSwitcher) { sprite.style.height = '35px';}
+	if (!heightSwitcher) { sprite.style.height = '40px';}
+
+	playerJumpHeight = parseInt(jumpHeightText.value);
+	if (!playerJumpHeight) {playerJumpHeight = 200};
+
+	playerStepSize = parseInt(stepSize.value);
+	if (!playerStepSize) {playerStepSize = 6};
+
+	playerWeight = parseInt(weight.value);
+	if (!playerWeight) {playerWeight = 3};
+
+/*
+	if ((parseInt(player.style.marginTop) + playerWeight ) > playerMaxDrown) { 
+		player.style.marginTop = playerMaxDrown +'px';
+	} else if ((parseInt(player.style.marginTop) < playerMaxDrown) && (playerWeight > 0)) { 
+		player.style.marginTop =parseInt(player.style.marginTop) + playerWeight + 'px' 
+	} else if ((parseInt(player.style.marginTop) + playerWeight ) < 0)  {
+		player.style.marginTop = '0px';
+	} else if ((parseInt(player.style.marginTop) > 0) && (playerWeight < 0)) { 
+		player.style.marginTop =parseInt(player.style.marginTop) + playerWeight + 'px' 
+	};
+*/
+	if ((parseInt(player.style.marginTop) < playerMaxDrown) && (playerWeight > 0) && ((parseInt(player.style.marginTop) + playerWeight ) < playerMaxDrown)) { 
+		player.style.marginTop =parseInt(player.style.marginTop) + playerWeight + 'px' };
+
+	if ((parseInt(player.style.marginTop) + playerWeight ) > playerMaxDrown) { 
+		player.style.marginTop = playerMaxDrown +'px';
+	};
+
+	if ((parseInt(player.style.marginTop) + playerWeight ) < 0)  {
+		player.style.marginTop = '0px';
+	};
+
+	if ((parseInt(player.style.marginTop) > 0) && (playerWeight < 0) && ((parseInt(player.style.marginTop) + playerWeight ) > 0)) { 
+		player.style.marginTop =parseInt(player.style.marginTop) + playerWeight + 'px' 
+	};
+
+	time = parseInt(freq.value);
+	if (!time) time = 150;
+	setTimeout(()=>virtualPhysics(), time);
+};
+virtualPhysics();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<script type="importmap">
+
+    </script>
+    <meta charset=utf-8>
+    <title>Planet</title>
+    
+	<link rel="stylesheet" href="game.css">
+	<link rel="stylesheet" href="button-78.css">
+	<link rel="stylesheet" href="styles.css">
+	
+
+      
+      
+    <link rel="icon" href="../images/fac.png" type="image/x-icon" />
+      
+  </head>
+  <body>
+  
+   <div class="wrapper">
+   <div>
+   
+   
+   <main>
+	<button class="button-78" onClick="showMap()" id="tooohjpotj">Show the map</button><p></p>
+	<button class="button-78" onClick="window.open('./roll/roll.html');">Roll the world</button><p></p>
+	<button class="button-78" onClick="window.open('./space/index.html');">View orbits</button><p></p>
+	<button class="button-78" onClick="window.open('../index.html', '_self');">Back</button><p></p>
+	<button class="button-78" onClick="">Yet another button</button><p></p>
+   </main>
+   
+   </div>
+   <div>
+   
+   
+ 
+        
+  <div class="window">
+  <canvas  id="bg">
+    </canvas>
+    </div>
+    
+    <div id="map"  class="hidden" >
+     <img class="img_map" src="dw.jpg"  />
+     
+     <a href="./surface/place_a/index.html"><img class="dot" src="dot.png"  /></a>
+     
+     </div>
+     
+
+    <div id="orbit"  class="hidden" >
+     <img class="img_map orbital_map" src="planet.gif"  />
+     
+     <a id="first_ship" href="./space/first_ship/index.html"><img class="ship" src="dot.png"  /></a>
+     
+     <a id="second_ship" href="./space/second_ship/index.html"><img class="ship" src="dot.png"  /></a>
+     
+     <a id="third_ship" href="./space/third_ship/index.html"><img class="ship" src="dot.png"  /></a>
+     
+     </div>
+     
+     
+    </div>
+
+
+        
+        
+        
+     <script src="three.js"></script>
+        
+     <script src="map_switch.js"> </script>
+        
+<script src="planet_rotation.js">
+
+</script>
+    
+  
+  </body>
+</html>

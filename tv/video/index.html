@@ -1,0 +1,303 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Video Player</title>
+    <meta content="">
+    <style>
+    
+    body {
+    
+    background: #000;
+    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: -8px;
+/*    background: #e0e5ec; */
+}
+
+.frame{
+    margin-top: 30%;
+    position: absolute;
+    opacity: 0.2;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 110px;
+  width: 350px;
+  position: relative;
+   box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001,
+   inset 0px 0px 0px 0px #fff9,
+   inset 0px 0px 0px 0px #0001,
+   inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
+ transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+   border-radius: 10px;
+}
+
+.frame:hover {
+opacity: 0.8;
+}
+
+.btn{
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+  background: #e0e5ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+ transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+  font-size: 26px;
+  color: #666;
+  text-decoration: none;
+}
+.btn:hover{
+background: radial-gradient(circle,  #0ff 0%, #e0e5ec 60%);
+  color: rgba(102,102,102,.5); 
+  animation: colorchange 3s linear infinite;
+}
+.btn:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+@keyframes colorchange {
+	to {filter: hue-rotate(360deg);}
+}
+    
+    
+    
+/*     https://codepen.io/yuhomyan/pen/LYGMQJJ */
+
+#source {
+ position:absolute;
+z-index: -1;
+ width: 100%;
+ height: 100%;
+
+}
+
+
+/*  */
+
+
+
+    input[type=range] {
+        height: 32px;
+        -webkit-appearance: none;
+        margin: 10px 0;
+        width: 40%;
+        background: inherit;
+         position:absolute;
+         margin-top: 30%;
+    }
+    input[type=range]:focus {
+        outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 16px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: #fff9;
+        border-radius: 25px;
+        border: 1px solid #666;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        box-shadow: 1px 1px 1px #666;
+/*        border: 1px solid #666;*/
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        /* thumb_sl*/
+        background: #e0e5ec;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -5px;
+          box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+    }
+    
+        input[type=range]::-webkit-slider-thumb:hover {
+        background: radial-gradient(circle,  #0ff 0%, #e0e5ec 60%);
+  color: rgba(102,102,102,.5); 
+  animation: colorchange 3s linear infinite;
+    }
+    
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #fff9; 
+    }
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 16px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000;
+        background: #B6B6B6;
+        border-radius: 25px;
+        border: 1px solid #423e39;
+    }
+    input[type=range]::-moz-range-thumb {
+        box-shadow: 1px 1px 1px #828282;
+        border: 1px solid #423e39;
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        /*   background: #DADADA; */
+        background: rgba(255, 54, 24, 1);
+        cursor: pointer;
+    }
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 16px;
+        cursor: pointer;
+        animate: 0.2s;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+    input[type=range]::-ms-fill-lower {
+        background: #B6B6B6;
+        border: 1px solid #423e39;
+        border-radius: 50px;
+          box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+    }
+    input[type=range]::-ms-fill-upper {
+        background: #B6B6B6;
+        border: 1px solid #423e39;
+        border-radius: 50px;
+    }
+    input[type=range]::-ms-thumb {
+        margin-top: 1px;
+        border: 1px solid #8A8A8A;
+        height: 24px;
+        width: 35px;
+        border-radius: 6px;
+        background: #DADADA;
+        cursor: pointer;
+        
+    }
+    input[type=range]:focus::-ms-fill-lower {
+        background: #B6B6B6;
+    }
+    input[type=range]:focus::-ms-fill-upper {
+        background: #B6B6B6;
+    }
+
+    
+    </style>
+  </head>
+  <body>
+  
+<video id="source">
+  <source  src="" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+
+
+
+  <div class ="frame">
+   
+    <a href="#" class="btn" onclick="prev()">
+ <div class="fas fa-backward">&#9198;</div>
+</a>
+    <a href="#" class="btn" onclick="pause()">
+<div class="fas fa-play" id="play_btn">&#9654;</div>
+</a>
+    <a href="#" class="btn" onclick="next()">
+ <div class="fas fa-forward">&#9197;</div>
+</a>
+  
+   
+<input type="range" min="0" max="100" step="0" value="50" id="volume" >  
+        
+</a>
+  
+</div>
+  
+  
+  
+  <script src="list.js"></script>
+  
+  <script>
+  
+  chosen = 0;
+  
+  source.src = list_of_vids[chosen];
+  
+  bool_pause = false;
+  
+  function pause() {
+  
+    if (bool_pause) { play_btn.innerHTML = "&#9654"; source.pause(); };
+    
+    if (!bool_pause) { play_btn.innerHTML = "&#9208"; source.play(); };
+    
+    bool_pause = !bool_pause;
+  
+  };
+   
+    
+  function prev() {
+  
+    if (list_of_vids[chosen-1]) { chosen--; source.src = list_of_vids[chosen];  bool_pause = false;   pause() };
+  
+  };
+  
+  function next() {
+  
+    if (list_of_vids[chosen+1]) { chosen++; source.src = list_of_vids[chosen];   bool_pause = false;  pause() };
+  
+  };
+  
+  function volumeMeter() {
+  
+    source.volume = (volume.value / 100);
+    
+    if (source.currentTime == source.duration) pause(); 
+  
+    setTimeout( () => { volumeMeter() }, 150);
+    
+  };
+  
+  source.volume = 0.5;
+  
+  volumeMeter();
+  
+  
+  
+  </script>
+  
+  </body>
+</html>
+
+
+

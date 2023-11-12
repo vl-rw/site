@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.vertical-oriented {
+  	height: 105vh;
+  	width: auto; 
+}
+.horizontal-oriented {
+  	height: auto;
+  	width: 105vw; 
+}
+
+.content {
+  	position: fixed;
+  	width: 100vw;
+  	left: 0;
+  	top: 0;
+  	color: #f1f1f1;
+  	height: 100vh;
+  	padding: 20px;
+  	border-radius: 20px;
+}
+#video {
+	margin: -1%;
+	margin-top: -5%;
+}
+body {
+	overflow: hidden;
+}
+#text {
+	margin-left: 35vw;
+	margin-top: 40vh;
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="video">
+  <source src="galaxies.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+
+
+
+
+
+<div class="content">
+
+<div id="text"></div>
+
+</div>
+
+<script>
+
+
+
+if ( (window.innerWidth - window.innerHeight) > 500 ) {
+
+	video.classList.add("horizontal-oriented");
+	
+	text.style.fontSize = "48px"
+
+} else {
+
+	video.classList.add("vertical-oriented");
+	
+	text.style.fontSize = "28px";
+
+};
+
+let count = 7;
+
+function countdown() {
+
+	count--;
+
+	if (count == 0) {
+	
+		window.open("index.html", "_self");
+		
+	};
+	
+	if (count != 0) { 
+	
+		text.textContent = "Loading the universe: " + count + "sec"; 
+		
+		setTimeout( () => {
+		
+			countdown()
+			
+		}, 1000); 
+		
+		console.log(count);
+ 
+	};
+
+};
+
+countdown();
+
+</script>
+
+</body>
+</html> 

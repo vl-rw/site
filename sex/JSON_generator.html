@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  		html{
+    		background-color: rgba (58, 157, 66, 0.66);
+		}
+		body{
+    		width: 80%;
+    		margin: 0 auto;
+    		/*background-color: rgba(103, 101, 98, 0.76);*/
+    		padding-top: 10px;
+    		height: 100vh;
+		}
+		form{
+    		display: block;
+    		margin: 0 10%;
+		}
+		textarea{
+    		display: block;
+    		margin-bottom: 15px;
+    		font-family: "Tahoma", serif;
+    		font-size: 1.3rem;
+    		color: white;
+    		background-color: gray;
+    		
+		}
+		textarea[placeholder]{
+    		width: 200px;
+    		height: 5vh;
+    		outline: none;
+    		border: 3px solid rgba(11, 168, 35, 0.75);
+    		/*background-color: #ffffff;*/
+    		border-radius: 7px;
+    		/*color: rgba(11, 168, 35, 0.75);*/
+		}
+		
+		input[type="button"]{
+    		margin: 0 40px;
+    		border-radius: 6px;
+    		border: 3px solid #fff;
+    		background-color: rgba(11, 168, 35, 0.75);
+    		color: #fff;
+    		padding: 5px 10px;
+    		transition: 0.5s All ease;
+		}
+		input[type="button"]:hover{
+    		border: 3px solid rgba(11, 168, 35, 0.75);
+    		background-color: #fff;
+    		color: rgba(11, 168, 35, 0.75);
+    		border-radius: 10px;
+		} 
+  </style>
+</head>
+<body>
+  
+
+  				
+  				<form action="#" method="post">
+  				<h2>Заголовок КРАТКО:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='textAreaName' name="text">Перступление</textarea>
+				
+  				<h2>Описание:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='textDescription' name="text">7 января украли, убили и растоплтали доброе имя.</textarea>
+    				<h2>Изображение (ссылка):</h2>
+  				<textarea cols=25 rows=1 class='txt' id='imageLink' name="text">https://image.shutterstock.com/image-illustration/criminal-text-on-red-grungy-260nw-1911448459.jpg</textarea>
+  				
+  				
+    				<h2>Цитата:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='quote1' name="text">'Здесь был Вася' </textarea>
+    				<h2>Вторая цитата:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='quote2' name="text"></textarea>
+    				<h2>Отмазка:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='quote3' name="text">'Меня подставили'</textarea>
+  					<h2>Отмазка №2:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='quote4' name="text"></textarea>
+  				
+    				<h2>Ссылка:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='firstLink' name="text">https://...</textarea>
+    				<h2>Зеркало:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='secondLink' name="text">https://...</textarea>
+    				<h2>Упоминается также сдесь/корневой источник:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='thirdLink' name="text">https://...</textarea>
+    				<h2>В веб-архиве:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='webArchive' name="text">#</textarea>
+    				<h2>Сохранённая версия в .zip файле:</h2>
+  				<textarea cols=25 rows=1 class='txt' id='localArchive' name="text">#</textarea>
+  				
+  				<h2>Result JSON element</h2>
+  				<p>Kind of <b>{ + + + },</b> in the [{},{},{}] massive.</p>
+
+				  
+  				<textarea cols=25 rows=10 class='txt' id='resultJSON' name="text"> Текст</textarea>
+  				<input type="button" value="Send" onclick="JSONgenerate()">  
+  				<input type="button" value="Copy" onclick="navigator.clipboard.writeText(copyText);">  
+  				<!--
+  				
+    				<h2>Experimental (adding elements, then close them)!</h2>
+  				<p> Result looks like [ {}, {}, {}]  </p>
+  				<textarea cols=25 rows=20 class='txt' id='additionJSON' name="text"></textarea>
+  				<input type="button" value="Add" onclick="JSONadd()">  
+  				<input type="button" value="Close" onclick="JSONclose()">  
+  				
+  				
+  				-->
+  
+  </form>
+  
+  
+  
+  
+  <script>
+  				let copyText = '';
+				function JSONgenerate() {
+					let itemId = ''+new Date().getDate()+'00' +(new Date().getMonth()+1)+'00' +new Date().getYear() +'00'+ Math.round(10000*Math.random()) ;
+					
+					let onePart = '{  "id": ' + itemId + ',       "name": " ' + textAreaName.value + '",     "description": "' + textDescription.value + '",    "modified": "' + ''+new Date().getDate()+' - ' +(new Date().getMonth()+1)+' - ' +(new Date().getYear()+ 1900) + '",        "image": "' + imageLink.value + '",        "quote1": "' + quote1.value;
+					
+					let secondQuote = '",        "quote2": "' + quote2.value;
+					
+					if (quote2.value ==0) secondQuote = '';
+					
+					let secondPart = '",        "quote3": "'  + quote3.value;
+					
+					let thirdQuote = '",        "quote4": "' + quote4.value;
+					
+					if (quote4.value ==0) thirdQuote = '';
+					
+					let thirdPart = '",    "link1": "' +firstLink.value + '",        "link2": "' +secondLink.value +'",        "link3": "' +thirdLink.value +'",        "link4": "' +webArchive.value +'",        "link5": "' +localArchive.value + '"    },';
+					
+					let result = onePart + secondQuote + secondPart + thirdQuote + thirdPart;
+					
+					
+					/*
+					
+					let result = '{  "id": ' + itemId + ',       "name": " ' + textAreaName.value + '",     "description": "' + textDescription.value + '",    "modified": "' + ''+new Date().getDate()+' - ' +(new Date().getMonth()+1)+' - ' +(new Date().getYear()+ 1900) + '",        "image": "' + imageLink.value + '",        "quote1": "' + quote1.value + '",        "quote2": "' + quote2.value + '",        "quote3": "'  + quote3.value +  '",        "quote4": "' + quote4.value + '",    "link1": "' +firstLink.value + '",        "link2": "' +secondLink.value +'",        "link3": "' +thirdLink.value +'",        "link4": "' +webArchive.value +'",        "link5": "' +localArchive.value + '"    },';
+					
+					*/
+    				copyText = result;
+    				resultJSON.value=result;
+				};
+
+				function copyPart() {
+					//console.log(copyText);
+					//str = copyText;
+					//document.execCommand("Copy")
+
+					navigator.clipboard.writeText(copyText);
+
+					
+
+				};
+				/*
+				
+				function JSONadd() {
+						let itemId = ''+new Date().getDate()+'00' +(new Date().getMonth()+1)+'00' +new Date().getYear() +'00'+ Math.round(10000*Math.random()) ;
+					
+					let result = '{  "id": ' + itemId + ',       "name": " ' + textAreaName.value + '",     "description": "' + textDescription.value + '",    "modified": "' + ''+new Date().getDate()+' - ' +(new Date().getMonth()+1)+' - ' +(new Date().getYear()+ 1900) + '",        "image": "' + imageLink.value + '",        "tasty1": "' + tasty1.value + '",        "tasty2": "' + tasty2.value + '",        "tasty3": "'  + tasty3.value +  '",        "tasty4": "'  +  tasty4.value + '",        "link1": "' +firstLink.value + '",        "link2": "' +secondLink.value +'",        "link3": "' +thirdLink.value +'",        "link4": "' +webArchive.value +'",        "link5": "' +localArchive.value + '"    },';
+					
+					additionJSON.value += result;
+					
+					
+				};
+				
+				
+				function JSONclose() {
+					additionJSON.value = '[   ' + additionJSON.value.substring(0, additionJSON.value.length - 1) + ' ]';
+				
+				};
+				*/
+  </script>
+
+
+</body>
+</html>

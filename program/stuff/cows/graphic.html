@@ -1,0 +1,464 @@
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+<style>
+#body {
+overflow: hidden;
+
+}
+.bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+	width: 115%;
+  z-index: -10;
+  background: url(360_F_187785272_IYDuTUwv2ksNUPPrE7a8OrcOZFRtqI3z.jpg) 0% 0% repeat;
+  animation-name: MOVE-BG;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes MOVE-BG {
+   from {
+     transform: translateX(0);
+   }
+   to { 
+     transform: translateX(-5%);
+   }
+}
+
+.field {
+width: 100px;
+height: 100px;
+background-color: brown;
+opacity: 0.2;
+filter: blur(38px);
+position: absolute;
+transition-duration: 2;
+}
+
+.info {
+width: 300px;
+height: 600px;
+left: 950px;
+position: absolute;
+background-color: grey;
+opacity: 0.8;
+overflow: hidden;
+border-radius: 10px;
+padding: 10px;
+color: white;
+}
+
+.f2 {top: 100px;left: 200px;}
+.f3 {top: 100px;left: 300px;}
+.f4 {top: 100px;left: 400px;}
+.f5 {top: 100px;left: 500px;}
+.f6 {top: 200px;left: 100px;}
+.f7 {top: 200px;left: 200px;}
+.f8 {top: 200px;left: 300px;}
+.f9 {top: 200px;left: 400px;}
+.f10 {top: 200px;left: 500px;}
+.f11 {top: 200px;left: 600px;}
+.f12 {top: 300px;left: 100px;}
+.f13 {top: 300px;left: 200px;}
+.f14 {top: 300px;left: 300px;}
+.f15 {top: 300px;left: 400px;}
+.f16 {top: 300px;left: 500px;}
+.f17 {top: 300px;left: 600px;}
+.f18 {top: 400px;left: 200px;}
+.f19 {top: 400px;left: 300px;}
+.f20 {top: 400px;left: 400px;}
+.f21 {top: 400px;left: 500px;}
+
+.goat {
+height: 18px;
+width: 18px;
+border-radius: 50%;
+position: absolute;
+transition-dutation: .5s;
+
+background-image: url(skinn.jpg);
+background-size: cover;
+
+}
+
+#crater {
+    position: absolute;
+    transition-duration: .5s;
+    margin-left: 450px;
+    left: -450px;
+    top: -100px;
+    z-index: -3;
+/*     transform: rotate3d(10,10,1,-145deg); */
+    transform: perspective(400px) rotateX(25deg);
+    width: 800px;
+ 
+
+}
+
+
+</style>
+</head>
+<body id="body">
+
+<div class="bg"></div>
+
+
+
+<button onClick="addGoats()">Add one</button>
+
+<button onClick="let goats = document.querySelectorAll('.goat');alert(goats.length + ' right now.')">Count</button>
+
+<button onClick="alert('Maximum population is '+ maxLength)">Maximum</button>
+
+<button onClick="alert('average quantity is '+ average)">Average</button>
+
+<button onclick="location.href='abstract.html';">Light version</button>
+
+<button onclick="sound()" id="sound_but">Sound 🔊</button>
+
+<img id="crater" src="Alphonsus_(LRO)_1.png" >
+
+
+<div class="field f2"></div>
+<div class="field f3"></div>
+<div class="field f4"></div>
+<div class="field f5"></div>
+
+<div class="field f6"></div>
+<div class="field f7"></div>
+<div class="field f8"></div>
+<div class="field f9"></div>
+<div class="field f10"></div>
+<div class="field f11"></div>
+
+<div class="field f12"></div>
+<div class="field f13"></div>
+<div class="field f14"></div>
+<div class="field f15"></div>
+<div class="field f16"></div>
+<div class="field f17"></div>
+
+<div class="field f18"></div>
+<div class="field f19"></div>
+<div class="field f20"></div>
+<div class="field f21"></div>
+
+<div class="info">
+
+</div>
+
+
+</body>
+<script>
+averageArray = [];
+
+info = document.querySelector('.info');
+
+function writeThat(text) {
+	p = document.createElement('p');
+	p.textContent = text; 
+
+	ccc = info.innerHTML;
+	info.textContent = p.textContent;
+	bbb = document.createElement('br');
+	info.appendChild(bbb);
+	info.innerHTML += ccc;
+
+/*
+	ccc = info.textContent;
+	bbb = document.createElement('br');
+	info.textContent = p.textContent;
+
+	info.appendChild(bbb);
+	info.appendChild(ccc);
+*/
+};
+
+sw = true;
+
+function addGoats() {
+	sw = !sw;
+	audio.play();
+	if (sw) {
+		goat = document.createElement("div");
+		goat.id = 'w' + Date.now();
+		goat.classList.add('goat');
+		
+		body.appendChild(goat);
+		console.log('Born '+goat.id);
+		writeThat('Born '+goat.id);
+		feed(goat);
+	};
+
+	if (!sw) {
+		goat = document.createElement("div");
+		goat.id = 'm' + Date.now();
+		goat.classList.add('goat');
+
+		body.appendChild(goat);
+		console.log('Born '+goat.id);
+		writeThat('Born '+goat.id);
+		feed(goat);
+	};
+
+};
+
+const fields = document.querySelectorAll(".field");
+
+
+function feed(obj) {
+	randomField = fields[parseInt(20*Math.random())];
+	console.log(obj.id + " go to field "+ randomField.classList[1]);
+	writeThat(obj.id + " go to field "+ randomField.classList[1]);
+	obj.placery = randomField.classList[1];
+	eating(obj, randomField, 0, 5);
+};
+
+
+
+f2 = document.querySelector(".f2");
+f2.style.top="100px";
+f2.style.left="200px";
+f2.style.opacity="0.2";
+
+f3 = document.querySelector(".f3");
+ f3.style.top="100px";
+f3.style.left="300px";
+f3.style.opacity="0.2";
+
+f4 = document.querySelector(".f4");
+ f4.style.top="100px";
+f4.style.left="400px";
+f4.style.opacity="0.2";
+
+f5 = document.querySelector(".f5");
+ f5.style.top="100px";
+f5.style.left="500px";
+f5.style.opacity="0.2";
+
+f6 = document.querySelector(".f6");
+ f6.style.top="200px";
+f6.style.left="100px";
+f6.style.opacity="0.2";
+
+f7 = document.querySelector(".f7");
+ f7.style.top="200px";
+f7.style.left="200px";
+f7.style.opacity="0.2";
+
+f8 = document.querySelector(".f8");
+ f8.style.top="200px";
+f8.style.left="300px";
+f8.style.opacity="0.2";
+
+f9 = document.querySelector(".f9");
+ f9.style.top="200px";
+f9.style.left="400px";
+f9.style.opacity="0.2";
+
+f10 = document.querySelector(".f10");
+ f10.style.top="200px";
+f10.style.left="500px";
+f10.style.opacity="0.2";
+
+f11 = document.querySelector(".f11");
+ f11.style.top="200px";
+f11.style.left="600px";
+f11.style.opacity="0.2";
+
+f12 = document.querySelector(".f12");
+ f12.style.top="300px";
+f12.style.left="100px";
+f12.style.opacity="0.2";
+
+f13 = document.querySelector(".f13");
+ f13.style.top="300px";
+f13.style.left="200px";
+f13.style.opacity="0.2";
+
+f14 = document.querySelector(".f14");
+ f14.style.top="300px";
+f14.style.left="300px";
+f14.style.opacity="0.2";
+
+f15 = document.querySelector(".f15");
+ f15.style.top="300px";
+f15.style.left="400px";
+f15.style.opacity="0.2";
+
+f16 = document.querySelector(".f16");
+ f16.style.top="300px";
+f16.style.left="500px";
+f16.style.opacity="0.2";
+
+f17 = document.querySelector(".f17");
+ f17.style.top="300px";
+f17.style.left="600px";
+f17.style.opacity="0.2";
+
+f18 = document.querySelector(".f18");
+ f18.style.top="400px";
+f18.style.left="200px";
+f18.style.opacity="0.2";
+
+f19 = document.querySelector(".f19");
+ f19.style.top="400px";
+f19.style.left="300px";
+f19.style.opacity="0.2";
+
+f20 = document.querySelector(".f20");
+ f20.style.top="400px";
+f20.style.left="400px";
+f20.style.opacity="0.2";
+
+f21 = document.querySelector(".f21");
+ f21.style.top="400px";
+f21.style.left="500px";
+f21.style.opacity="0.2";
+
+maxLength = 0;
+
+function eating(obj, field, num, count) {
+
+	if (count == -1) { 
+		console.log(obj.id+" starved to death");
+		writeThat(obj.id+" starved to death");
+		obj.remove();
+		audio1.play();
+
+	} else { 
+
+
+	if (count == 0) { 
+		feed(obj);
+
+		if (Math.random() > 0.5) {
+
+			setTimeout(() => {addGoats()}, 300);
+		
+		};
+
+
+		
+
+	} else { 
+
+		if (( count == 5) && (num == 0)) {
+			console.log(obj.id + " eating");
+			writeThat(obj.id + " eating");
+		};
+
+		if (num == 0)  {
+			obj.style.top = parseInt(field.style.top ) + 'px';
+			obj.style.left = parseInt(field.style.left ) + 'px';
+		};
+	
+		num ++;
+	
+		if (num < 100) { 
+		
+			obj.style.top = parseInt(obj.style.top )  + 1 + 'px';
+			obj.style.left = parseInt(obj.style.left )  + 1 + 'px';
+		};
+	
+		if ((num > 100) && (num < 200)) { 
+		
+			obj.style.left = parseInt(obj.style.left )  - 1 + 'px';
+		};
+	
+		if ((num > 200) && (num < 300)) { 
+		
+			obj.style.top = parseInt(obj.style.top )  - 1 + 'px';
+			obj.style.left = parseInt(obj.style.left )  + 1 + 'px';
+		};
+	
+		if ((num > 300) && (num < 400)) { 
+		
+			obj.style.left = parseInt(obj.style.left )  - 1 + 'px';
+		};
+	
+		if (num > 400) {
+	 
+			count--;
+			num = 1;
+			field.style.opacity = parseFloat(field.style.opacity) + 0.1;
+			if (parseFloat(field.style.opacity) > 1 ) { 
+				count = -1;
+
+			}
+
+			
+	
+		};
+	
+		setTimeout(() => {eating(obj, field, num, count);}, 10);
+		};
+	};
+
+	
+
+};
+
+function restoreFields() {
+	fields.forEach(element => {
+	
+		if (element.style.opacity > 0.1) {
+	
+			element.style.opacity = parseFloat(element.style.opacity) - 0.01;
+		};
+	} );
+
+
+	setTimeout(() => {restoreFields()}, 1000);
+
+	const goats = document.querySelectorAll(".goat");
+
+
+	averageArray.push(goats.length);
+	averageArraySum = 0;
+	averageArray.forEach(element => {
+	
+		averageArraySum +=element;
+	} );
+
+	average = averageArraySum / averageArray.length;
+
+	if (goats.length > maxLength) { 
+
+		maxLength = goats.length 
+		console.log("Maximum population is "+maxLength);
+		writeThat("Maximum population is "+maxLength);
+	};
+
+	
+};
+restoreFields();
+
+
+
+let audio = new Audio('moo.mp4');
+audio.volume = 0.2;
+let audio1 = new Audio('die.mp4');
+audio1.volume = 0.2;
+
+sou = true;
+function sound() {
+	if (sou) {
+		sound_but.textContent = "Sound 🔇";
+		audio.volume = 0;
+		audio1.volume = 0;
+	};
+	if (!sou) {
+		sound_but.textContent = "Sound 🔊";
+		audio.volume = 0.2;
+		audio1.volume = 0.2;
+	};
+	sou = !sou;
+};
+</script>
+
+</html>

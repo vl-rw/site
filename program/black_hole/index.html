@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Black hole journey</title>
+
+  <style>
+  body {
+  overflow: hidden;
+  background-color: grey;
+  }
+  
+  #container {
+  
+  //border: 1px solid black;
+  margin: auto;
+
+  }
+  
+  #bottom {
+  
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  }
+  
+  #moving {
+  
+  background-image: url("space_hole.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 50%;
+  
+  }
+  
+  #label {
+  
+  width: 100%;
+  height: 2%;
+  display: flex;
+  flex-direction: row;
+  
+  }
+  
+  #label p{
+  
+  width: 30%;
+  margin-left: 12%;
+  color: white;
+  
+  }
+  
+  #ship {
+  
+  background-image: url("pngegg.png");
+  background-size: cover;
+  position: absolute;
+  border: 2px solid red;
+  border-radius: 50%;
+  transition-duration: 2s;
+  
+  }
+  
+  #front {
+  
+  width: 30%;
+  height: 90%;
+  overflow: hidden;
+  margin-top: 3%;
+  margin-left: 2%;
+  }
+  
+  #fr_picture {
+  
+  height: 100%;
+  margin-left: -122%;
+  transition-duration: 2s
+
+  }
+  
+  #side {
+  
+  width: 30%;
+  height: 90%;
+  overflow: hidden;
+  margin-top: 3%;
+  margin-left: 2%;
+
+  
+  }
+  
+  #sd_picture {
+  
+  height: 100%;
+  transition-duration: 2s;
+  
+  }
+  
+  #back {
+  
+  width: 30%;
+  height: 90%;
+  overflow: hidden;
+  margin-top: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: white
+  
+  }
+  
+  #bc_picture {
+  
+  height: 100%;
+  transition-duration: 2s;
+  
+  }
+  </style>
+ </head>
+ <body>
+ 
+<div id="container">
+
+<div id="moving">
+
+		<div id="ship" onclick="suicide()"></div>
+		
+
+</div>
+
+<div id="label">
+
+<p>BACK VIEW</p>
+<p>SIDE VIEW</p>
+<p>FRONT VIEW</p>
+
+</div>
+
+<div id="bottom">
+
+
+<div id="back">
+
+	<img src="back.jpg" id="bc_picture" >
+
+</div>
+
+
+
+
+<div id="side">
+
+	<img src="side.jpg" id="sd_picture" >
+
+</div>
+
+
+
+<div id="front">
+
+	<img src="space_hole.jpg" id="fr_picture" >
+
+</div>
+
+
+
+
+</div>
+</div>
+
+<script>
+
+(window.innerWidth > window.innerHeight) ? miminum = window.innerHeight :  miminum = window.innerWidth;
+
+if (window.innerWidth < window.innerHeight) container.style.marginTop = (window.innerHeight - miminum) / 2 +"px";
+
+container.style.height = -20 + miminum + "px";
+container.style.width = -20 + miminum + "px";
+
+ship.style.height = 0.1 * miminum + "px";
+ship.style.width = 0.1 * miminum + "px";
+ship.style.marginTop = 0.24 * miminum + "px";
+
+
+
+let marge_f = 122;
+let scal_f = 1;
+let scal_b = 4;
+let marge_m = 0;
+
+let count = 25;
+
+bc_picture.style.borderRadius = "50%";
+bc_picture.style.border = "3px rgba(255,255,204, 0.9) solid";
+bc_picture.style.height = "100%";
+
+bc_picture.style.transform = "scale( " + scal_b + ")";
+
+
+function suicide() {
+
+ship.style.border = 'none';
+
+count--;
+
+marge_m += 0.02;
+
+marge_f += 4;
+
+scal_f += 0.1;
+
+if (scal_b > 0) scal_b -= 0.01;
+
+
+
+if (count>0) {
+
+	ship.style.marginLeft = marge_m * miminum + "px";
+	
+	fr_picture.style.marginLeft = (-1) * marge_f + "%";
+	
+	fr_picture.style.transform = "scale( " + scal_f + ")";
+
+};
+
+if (!count) {
+
+	ship.style.display= "none";
+
+	fr_picture.style.transform = "scale(8)";
+	fr_picture.style.marginLeft = "-418%";
+}
+
+if (count>(-80)) {
+
+	sd_picture.style.marginLeft = (-1) * (marge_f-122) + "%";
+	
+	sd_picture.style.transform = "scale( " + scal_f + ")";
+	
+};
+
+
+bc_picture.style.transform = "scale( " + scal_b + ")";
+
+bc_picture.style.height  = parseInt(bc_picture.style.height)-1 +"%";
+	
+bc_picture.style.marginTop =  49 - parseInt(bc_picture.style.height)/2 + "%";
+	
+bc_picture.style.marginLeft =  49 - parseInt(bc_picture.style.height)/2 + "%";
+
+
+
+if (count > -80) {
+setTimeout( () => {suicide()}, 400)
+} else {
+
+alert("KONIEC");
+location.reload();
+}
+console.log(count);
+};
+
+
+
+</script>
+ </body>
+</html>

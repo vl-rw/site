@@ -1,0 +1,342 @@
+<!--https://www.dendyemulator.ru/games/game/turtles/-->
+
+
+<!DOCTYPE html>
+<html lang="ru"><head>
+
+<title>Dendy</title>
+
+
+
+
+<link href="files/thirdparty.min.css" type="text/css" rel="stylesheet">
+
+<link href="files/868bedb4586485259579b2f63774ee9b.css.css" type="text/css" rel="stylesheet">
+
+
+	                    <link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+	                    
+</head>
+
+
+<body style="background: url('files/1920x1200-2921628-super-mario___mixed-wallpapers.jpg'); background-size: cover">
+    
+
+    
+    
+    
+
+
+<main id="content"><center id="jsGameWrap" class="gameWindow" game="1651" rom="Ninja.nes">
+
+<!-- nes.min.js loads it - at the end of the file -->
+    
+
+  <div id="jsGameCenterBox">
+    <div id="jsGameBox">
+
+      <div id="closeGameFullScreen">X</div>
+
+      <div id="canvasWrapper" class="wrapper" style="position: relative; top: 170.3px; left: 0.0166626px;">
+      <canvas style="transform: scale(2.34);" width="256" height="256"></canvas></div>
+
+      <div id="controlMobile" class="control-mobile --hide">
+
+        <div class="control-mobile-cross">
+          <div class="control-mobile-cross__row">
+            <div class="control-mobile__btn --up" data-key="4"></div>
+            <div class="control-mobile__btn --right" data-key="7"></div>
+          </div>
+          <div class="control-mobile-cross__row">
+            <div class="control-mobile__btn --left" data-key="6"></div>
+            <div class="control-mobile__btn --down" data-key="5"></div>
+          </div>
+        </div>
+
+        <div class="control-mobile-btns">
+          <div class="control-mobile-btns__row">
+            <div class="control-mobile__btn --select" data-key="2"></div>
+            <div class="control-mobile__btn --start" data-key="3"></div>
+          </div>
+          <div class="control-mobile-btns__row">
+            <div class="control-mobile__btn --a" data-key="0"></div>
+            <div class="control-mobile__btn --b" data-key="1"></div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="center">
+    <div id="gameFullScreen">Fullscreen</div>
+  </div>
+
+
+  <div id="jsGameBoxControlBar">
+      <div id="controlBar" class="controlBar" style="visibility: visible;">
+        <div id="debugBar" class="ui-widget-header ui-corner-all" style="display: none;">
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="debugControlBar_playOneFrameButton" role="button" title="Play one frame"><span class="ui-button-icon-primary ui-icon ui-icon-seek-next"></span><span class="ui-button-text">Play one frame</span></button>
+          <div class="controlBarSeperator"></div>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="debugControlBar_gameSpeedButton" role="button" title="Game Speed"><span class="ui-button-icon-primary ui-icon ui-icon-transferthick-e-w"></span><span class="ui-button-text">Game Speed</span></button>
+          <!--<button class="controlBarButton" id="debugControlBar_getFrameHashButton"></button>-->
+          <div class="controlBarSeperator"></div>
+          <span id="debugControlBar_encoding" class="ui-buttonset">
+            <input type="radio" id="debugControlBar_encodingNTSC" name="debugControlBar_encoding" value="NTSC" class="ui-helper-hidden-accessible" checked="checked"><label for="debugControlBar_encodingNTSC" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button"><span class="ui-button-text">NTSC</span></label>
+            <input type="radio" id="debugControlBar_encodingPAL" name="debugControlBar_encoding" value="PAL" class="ui-helper-hidden-accessible"><label for="debugControlBar_encodingPAL" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button"><span class="ui-button-text">PAL</span></label>
+          </span>
+          <div class="controlBarSeperator"></div>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="debugControlBar_selectTraceButton" role="button" title="Trace Options.."><span class="ui-button-icon-primary ui-icon ui-icon-triangle-1-n"></span><span class="ui-button-text">Trace Options..</span></button>
+          <ul id="debugControlBar_traceMenu" class="ui-menu ui-widget ui-widget-content" role="menu" tabindex="0" style="display: none;">
+            <li class="controlBarMenuButton ui-menu-item" id="controlBar_cpuTraceParent" tabindex="-1" role="menuitem"><input type="checkbox" id="controlBar_cpuTraceButton"><label for="controlBar_cpuTraceButton">CPU</label></li>
+            <li class="controlBarMenuButton ui-menu-item" id="controlBar_cpuInstructionsTraceParent" tabindex="-1" role="menuitem"><input type="checkbox" id="controlBar_cpuInstructionsTraceButton"><label for="controlBar_cpuInstructionsTraceButton">CPU Instructions</label></li>
+            <li class="controlBarMenuButton ui-menu-item" id="controlBar_ppuTraceParent" tabindex="-1" role="menuitem"><input type="checkbox" id="controlBar_ppuTraceButton"><label for="controlBar_ppuTraceButton">PPU</label></li>
+            <li class="controlBarMenuButton ui-menu-item" id="controlBar_mapperTraceParent" tabindex="-1" role="menuitem"><input type="checkbox" id="controlBar_mapperTraceButton"><label for="controlBar_mapperTraceButton">Mapper</label></li>
+            <li class="controlBarMenuButton ui-menu-item" id="controlBar_allTraceParent" tabindex="-1" role="menuitem"><input type="checkbox" id="controlBar_allTraceButton"><label for="controlBar_allTraceButton">All</label></li>
+          </ul>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="debugControlBar_traceButton" role="button" title="Start Trace"><span class="ui-button-icon-primary ui-icon ui-icon-arrowthickstop-1-s"></span><span class="ui-button-text">Start Trace</span></button>
+        </div>
+
+        <div id="normalBar" class="ui-widget-header ui-corner-all">
+         
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_resetButton" role="button" title="Reset"><span class="ui-button-icon-primary ui-icon ui-icon-refresh"></span><span class="ui-button-text">Reset</span>R</button>
+          <div class="controlBarSeperator"></div>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_playButton" role="button" title="Pause"><span class="ui-button-icon-primary ui-icon ui-icon-pause"></span><span class="ui-button-text">Pause</span>P</button>
+          <div class="controlBarSeperator"></div>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_soundButton" role="button" title="Volume"><span class="ui-button-icon-primary ui-icon ui-icon-volume-off"></span><span class="ui-button-text">Volume</span>V</button>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_screenshotButton" role="button" title="Screenshot"><span class="ui-button-icon-primary ui-icon ui-icon-image"></span><span class="ui-button-text">Screenshot</span>W</button>
+          <div class="controlBarSeperator"></div>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_quickSaveButton" role="button" title="Quick save"><span class="ui-button-icon-primary ui-icon ui-icon-disk"></span><span class="ui-button-text">Quick save</span>S</button>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_quickLoadButton" role="button" title="Quick load"><span class="ui-button-icon-primary ui-icon ui-icon-folder-collapsed"></span><span class="ui-button-text">Quick load</span>L</button>
+          <div class="controlBarSeperator"></div>
+          <input class="controlBarButton ui-helper-hidden-accessible" type="checkbox" id="controlBar_debugButton"><label for="controlBar_debugButton" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Debug panel"><span class="ui-button-icon-primary ui-icon ui-icon-wrench"></span><span class="ui-button-text">Debug panel</span>D</label>
+          <div class="controlBarSeperator"></div>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_keyboardRemap" role="button" title="Remap controls"><span class="ui-button-icon-primary ui-icon ui-icon-calculator"></span><span class="ui-button-text">Remap controls</span>C</button>
+          <div class="controlBarSeperator"></div>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_gameGenieButton" role="button" title="Game Genie"><span class="ui-button-icon-primary ui-icon ui-icon-star"></span><span class="ui-button-text">Game Genie</span>G</button>
+          <button class="controlBarButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" id="controlBar_errorDisplay" role="button" title="Alerts"><span class="ui-button-icon-primary ui-icon ui-icon-alert"></span><span class="ui-button-text">Alerts</span>A</button>
+        </div>
+      </div>
+
+      
+      
+      
+      
+      <div id="debugWindow" class="debugWindow">
+      </div>
+      
+
+      
+  </div>
+  
+  
+  
+
+      <div id="choose_game" style="display: flex; width: 80vw; height: 20vh; overflow-x: scroll; overflow-y: hidden;"><div id="inner_div" style="display: flex;width: 800vw; height: 20vh;"></div></div>
+
+      
+      
+      
+      
+      <div id="debugWindow" class="debugWindow">
+      </div>
+      
+
+  
+  
+  
+  
+  
+     <details><summary>keyboard</summary>
+      <img  src="files/keys.png">
+</details>
+<script async="async" src="files/74868.js" type="text/javascript">
+</script>
+<!-- SAPE RTB END --> |</div><!--noindex-->
+
+<!--<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter22157276 = new Ya.Metrika({id:22157276});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/22157276" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+-->
+
+<!-- /Yandex.Metrika counter --></footer></div>
+
+
+
+<script type="text/javascript" src="files/share.js"></script>
+
+<script type="text/javascript" src="files/ajax.js"></script>
+
+<script type="text/javascript" src="files/dendyGame.js"></script>
+
+<script type="text/javascript" src="files/saveGame.js"></script>
+
+<script type="text/javascript" src="files/nes.components.min.js">
+
+</script><script type="text/javascript" src="files/nes.min.js"></script>
+
+<iframe src="files/a.html" style="width:1px;height:1px;display:none;" width="0" height="0" frameborder="0"></iframe>
+
+<a href="javascript: void(0);" class="scroll-top" style="display: none;"><svg class="icon icon-up-arrow" role="img">
+
+<polyline fill="none" stroke="currentColor" stroke-miterlimit="10" points="13.871,7.7 7.203,0.719 0.357,7.7 "></polyline></svg></a><div style="padding: 5px; min-width: 95px; height: 30px; line-height: 30px; text-align: right; text-shadow: rgb(34, 34, 34) 1px 1px 0px; background: rgb(34, 34, 34); color: rgb(255, 255, 255); border: 1px solid rgb(26, 26, 26); position: absolute; z-index: 10; inset: 10% auto auto 80%; margin: 0px; cursor: pointer; display: none;"><div style="position: absolute; top: 0px; right: 0px; padding: 5px 10px; height: 30px; font-size: 24px; font-family: Consolas, Andale Mono, monospace; z-index: 2;">0.0</div><div style="position: absolute; top: 0px; left: 0px; padding: 5px 10px; height: 30px; font-size: 12px; line-height: 32px; font-family: sans-serif; text-align: left; z-index: 2;">FPS</div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="gameGenieDialog" aria-labelledby="ui-id-1"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">Game Genie Codes</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="gameGenieDialog" class="gameGenieDialog ui-dialog-content ui-widget-content" style="display: block;">
+        <div id="gameGenieDialog_contents"></div>
+      </div>
+      
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      
+      <div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Close</span></button></div></div>
+      <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+      
+      <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div>
+      <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front no-close controlBarSlider" style="top: 768px; left: 877px; display: none; height: auto; width: 40px;" tabindex="-1" role="dialog" aria-describedby="controlBar_volumeSlider" aria-labelledby="ui-id-2"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+      <span id="ui-id-2" class="ui-dialog-title">&nbsp;</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close">
+      <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+      <span class="ui-button-text">Close</span></button></div><div id="controlBar_volumeSlider" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; max-height: none; height: 113px;">
+      <div class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all controlBarSliderContents"><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="bottom: 0%;" data-hasqtip="0" aria-describedby="qtip-0"></span></div></div></div>
+      <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front no-close controlBarSlider" style="display: none;" tabindex="-1" role="dialog" aria-describedby="controlBar_alertMessage" aria-labelledby="ui-id-3"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-3" class="ui-dialog-title">&nbsp;</span>
+      <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+      <span class="ui-button-text">Close</span></button></div><div id="controlBar_alertMessage" class="ui-dialog-content ui-widget-content">
+      <div></div></div></div>
+      <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front no-close controlBarSlider" style="display: none;" tabindex="-1" role="dialog" aria-describedby="debugControlBar_gameSpeedSlider" aria-labelledby="ui-id-4">
+      <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+      <span id="ui-id-4" class="ui-dialog-title">&nbsp;</span>
+      <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+      <span class="ui-button-text">Close</span></button></div>
+      <div id="debugControlBar_gameSpeedSlider" class="ui-dialog-content ui-widget-content"><div class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all controlBarSliderContents">
+      <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="bottom: 37.5%;" data-hasqtip="1"></span></div></div></div>
+      <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="keyboardRemapperDialog" aria-labelledby="ui-id-5">
+      <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle">
+      <span id="ui-id-5" class="ui-dialog-title">Control mapping</span>
+      <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div>
+      <div id="keyboardRemapperDialog" class="gameGenieDialog ui-dialog-content ui-widget-content" style="display: block;">
+        <div id="keyboardRemapperDialog_contents">
+          <map name="controllermap1">
+            <area shape="rect" coords="50, 40, 74, 60" alt="UP" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'UP' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="50, 77, 74, 97" alt="DOWN" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'DOWN' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="34, 56, 54, 80" alt="LEFT" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'LEFT' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="72, 56, 91, 80" alt="RIGHT" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'RIGHT' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="110, 72, 137, 89" alt="SELECT" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'SELECT' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="137, 72, 165, 89" alt="START" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'START' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="182, 66, 210, 94" alt="B" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'B' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="219, 66, 248, 94" alt="A" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 0, 'A' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+          </map>
+          <map name="controllermap2">
+            <area shape="rect" coords="50, 40, 74, 60" alt="UP" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'UP' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="50, 77, 74, 97" alt="DOWN" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'DOWN' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="34, 56, 54, 80" alt="LEFT" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'LEFT' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="72, 56, 91, 80" alt="RIGHT" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'RIGHT' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="110, 72, 137, 89" alt="SELECT" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'SELECT' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="137, 72, 165, 89" alt="START" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'START' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="182, 66, 210, 94" alt="B" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'B' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+            <area shape="rect" coords="219, 66, 248, 94" alt="A" onclick="Gui.keyboardRemapperDialog_onsetkeyclick( 1, 'A' );" data-maphilight="{&quot;strokeColor&quot;:&quot;ff2a00&quot;,&quot;strokeWidth&quot;:1,&quot;fillColor&quot;:&quot;ff0000&quot;,&quot;fillOpacity&quot;:0.4}">
+          </map>
+          <div>
+            <h1>Player 1</h1>
+            <div style="display: block; background: url(&quot;https://www.dendyemulator.ru/emu/WebNES/out/images/nescontroller.jpg&quot;); position: relative; padding: 0px; width: 288px; height: 119px;" class="keyboardMap"><canvas style="width: 288px; height: 119px; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;" width="288" height="119"></canvas><img class="keyboardMap maphilighted" src="files/nescontroller.jpg" alt="" usemap="#controllermap1" style="opacity: 0; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;"></div>
+          </div>
+          <div>
+            <h1>Player 2</h1>
+            <div style="display: block; background: url(&quot;https://www.dendyemulator.ru/emu/WebNES/out/images/nescontroller.jpg&quot;); position: relative; padding: 0px; width: 288px; height: 119px;" class="keyboardMap"><canvas style="width: 288px; height: 119px; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;" width="288" height="119"></canvas><img class="keyboardMap maphilighted" src="files/nescontroller.jpg" alt="" usemap="#controllermap2" style="opacity: 0; position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;"></div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Close</span></button></div></div>
+      <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div>
+      <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front no-close ui-dialog-buttons" style="display: none;" tabindex="-1" role="dialog" aria-describedby="keyboardRemapperSetKeyDialog" aria-labelledby="ui-id-6">
+      <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+      <span id="ui-id-6" class="ui-dialog-title">&nbsp;</span>
+      <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="keyboardRemapperSetKeyDialog" class="ui-dialog-content ui-widget-content">
+          <div id="keyboardRemapperSetKeyDialog_existingKeysContents">
+          </div>
+          <div id="keyboardRemapperSetKeyDialog_contents">
+          </div>
+        </div>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+        <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">OK</span></button>
+        <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Close</span></button></div></div></div>
+        <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" style="display: none; position: absolute;" tabindex="-1" role="dialog" aria-describedby="loadStateDialog" aria-labelledby="ui-id-7">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-7" class="ui-dialog-title">&nbsp;</span>
+        <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close">
+        
+        <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div><div id="loadStateDialog" style="display: block;" class="ui-dialog-content ui-widget-content">
+        <div id="loadStateDialog_contents"></div>
+      </div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset">
+      <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Close</span></button></div></div>
+      <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+      <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div>
+      <div style="position: fixed; left: -99px;"><div id="0716fef82a">
+      
+      <iframe scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="opacity: 1;" src="files/render.html" id="id6365" frameborder="no"></iframe></div></div>
+      
+      <div id="qtip-0" class="qtip qtip-default  qtip-pos-tl" tracking="false" role="alert" aria-live="polite" aria-atomic="false" aria-describedby="qtip-0-content" aria-hidden="true" data-qtip-id="0" style="z-index: 15001; top: 896.1px; left: 908.9px;">
+      <div class="qtip-tip" style="background-color: transparent !important; border: 0px none !important; width: 8px; height: 8px; line-height: 8px; left: -1px; top: -8px;"><canvas style="background-color: transparent !important; border: 0px none !important;" width="8" height="8"></canvas></div>
+      <div class="qtip-content" id="qtip-0-content" aria-atomic="true">0</div></div>
+      
+    
+      <script src="files/games/list.js">      </script>
+      
+      <script>
+      let text = '';
+      
+        for (let element in list_of_games) {
+  
+            var p = document.createElement('div');
+            
+            text += `<img src="${element}" onclick="Gui.App.start({createGuiComponents:!0,loadUrl:'${list_of_games[element]}' })" >`;
+            
+            p.innerHTML = `<img style="margin-left: 10px; width: 200px; height: 200px;" src="${element}" onclick="Gui.App.start({createGuiComponents:!0,loadUrl:'${list_of_games[element]}' })" >`;
+            
+            p.style.width = "200px";
+            
+            p.style.height = "200px";
+        
+            inner_div.appendChild(p);
+            
+        };
+
+      
+
+
+      </script>
+      
+      </body></html>

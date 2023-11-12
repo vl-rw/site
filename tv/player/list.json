@@ -1,0 +1,6 @@
+music_list = { 
+"John-Newman_Love-Me-Again-(High-Tide-Remix).mp3" : "./music/John-Newman_Love-Me-Again-(High-Tide-Remix).mp3",
+"Nirvana_Smells-Like-Teen-Spirit-(Psytrance-Pondora-Remix).mp3" : "./music/Nirvana_Smells-Like-Teen-Spirit-(Psytrance-Pondora-Remix).mp3",
+"waha_heretics.mp3" : "./music/waha_heretics.mp3",
+"waha_troopers.mp3" : "./music/waha_troopers.mp3",
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+<meta charset="UTF-8" />
+<title>wind</title>
+<!-- <link rel="stylesheet" href="./style.css" /> -->
+<style>
+
+body {
+	background: url("bliss.jpg");
+	background-size: cover;
+}
+#window {
+	overflow: hidden;
+	width: 460px;
+	height: 340px;
+	color: white;
+	font-size: 12px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#header1 {
+	width: 100%;
+	height: 12px;
+	background: linear-gradient( #626262, #505050);
+}
+#header2 {
+	width: 100%;
+	height: 12px;
+	background: linear-gradient( #4c4c4c, #484848);
+}
+#header3 {
+	width: 100%;
+	height: 1px;
+	background: #282828;
+}
+
+#headerText {
+	width: 40%;
+	height: 15px;
+	position: relative;
+	transition-duration: .3s;
+	margin-top: -44px;
+	font-size: 20px;
+	text-shadow: rgba( 255, 191, 0, .7) 1px 0 10px;
+}
+/*#FC0*/
+.topbutton {
+	position: relative;
+	transition-duration: .3s;
+} 
+.topbutton:hover {
+	/*box-shadow: 0 0 8px 4px rgba(255, 255, 255, .3);*/
+	box-shadow: 0 0 8px 4px rgba(0, 191, 255, .3);
+	transition-duration: .3s;
+} 
+.topbutton > p {
+	position: relative;
+	top: -12px;
+	left: 4px;
+}
+
+#button1 {
+	width: 20px;
+	height: 15px;
+	border: 1px solid  rgba(255, 255, 255, 0.5);/* 157 *3 */
+	outline: 1px solid rgba(52, 52, 52, 1);
+	border-radius: 2px;
+	margin-top: -22px;
+	left: 430px;
+	background: linear-gradient( #ff9999, #ff853b, 40%, #cc0000 );
+}
+#button2 {
+	width: 20px;
+	height: 15px;
+	border: 1px solid  rgba(255, 255, 255, 0.5);/* 157 *3 */
+	outline: 1px solid rgba(52, 52, 52, 1);
+	border-radius: 2px;
+	margin-top: -17px;
+	left: 400px;
+}
+#button3 {
+	width: 20px;
+	height: 15px;
+	border: 1px solid  rgba(255, 255, 255, 0.5);/* 157 *3 */
+	outline: 1px solid rgba(52, 52, 52, 1);
+	border-radius: 2px;
+	margin-top: -17px;
+	left: 370px;
+}
+.container {
+	padding: 30px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+}
+</style>
+
+</head>
+	<body>
+	
+<div id="window">
+
+<div id="header1"></div>
+<div id="header2"></div>
+<div id="header3"></div>
+
+
+
+<div id="button1" class="topbutton" onclick="closeW()"><p>&#10006;</p></div>
+<div id="button2" class="topbutton" onclick="wideW()" ><p>&#11036;</p></div>
+<div id="button3" class="topbutton" onclick="dashW()"><p>&mdash;</p></div>
+
+
+
+<div id="headerText"><p>&emsp14;&#9398;&emsp14;&emsp14;&emsp14;Hello world!</p></div>
+
+<br>
+
+<div class="container">
+
+
+
+
+
+<p style="color: #000" id="label">Lorem ipsum dolor sit amet...</p>
+<textarea id="text_area" style="width: 100%"></textarea>
+<br>
+<button onClick="ws.send('btn1');" >button 1</button>
+<button onClick="ws.send('btn2');" >button 2</button>
+<button onClick="ws.send('btn3');" >button 3</button>
+
+<br><br><br>
+<fieldset class="grid" style="color: #000">
+    <legend>Select a maintenance drone:</legend>
+    
+    
+	<div class="form-check column">
+    <div class="column">
+      <input type="radio" id="huey" name="drone" value="huey" onClick="ws.send('huey');" 
+             checked>
+      <label for="huey">Huey</label>
+    </div>
+
+    <div>
+      <input type="radio" id="dewey" name="drone" value="dewey" onClick="ws.send('dewey');" >
+      <label for="dewey">Dewey</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie" onClick="ws.send('louie');" >
+      <label for="louie">Louie</label>
+    </div>
+    </div>
+    
+    <div class="form-check column">
+
+  		<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick="ws.send('def_chk');" >
+  		<label class="form-check-label" for="flexCheckDefault">
+    		Default checkbox
+  		</label>
+		</div>
+		<div class="form-check">
+  		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked onClick="ws.send('chk_chk');">
+  		<label class="form-check-label" for="flexCheckChecked">
+    		Checked checkbox
+  		</label>
+	</div>
+	
+	
+</fieldset>
+
+
+
+
+
+
+</div>
+</div>
+    <script>
+        const ws = new WebSocket("ws://localhost:9898");
+        
+        ws.addEventListener("open", () => {
+           text_area.textContent= "We are connected!";
+           
+           ws.send("Request from html-based GUI...");
+        });
+        
+        ws.addEventListener("message", ({ data }) => {
+           text_area.textContent= data;
+        });
+      </script>
+<script>
+
+openedW = true;
+
+function closeW() {document.getElementById('window').style.display = 'none';};
+
+function dashW() {
+
+	openedW = !openedW;
+	
+	if (openedW == false) {
+	
+		document.getElementById('window').style.height = '22px';
+		
+		document.getElementById('window').style.width = '22px';
+		
+		button3.style.left = "0px";
+	};
+	
+	if (openedW == !false) {
+	
+		document.getElementById('window').style.height = '340px';
+		
+		document.getElementById('window').style.width = '460px';
+		
+		button3.style.left = "370px";
+	};
+};
+
+widedW = true;
+
+function wideW() {
+
+	widedW = !widedW;
+	
+	if (widedW == false) {
+	
+		document.getElementById('window').style.height = '100vh';
+		
+		document.getElementById('window').style.width = '100vw';
+		
+		button3.style.left = "calc(100% - 90px)";
+		
+		button2.style.left = "calc(100% - 60px)";
+				
+		button1.style.left = "calc(100% - 30px)";
+		
+		document.getElementById('window').style.position = 'fixed';
+		
+		document.getElementById('window').style.top = '0px';
+				
+		document.getElementById('window').style.left = '0px';
+	};
+	
+	if (widedW == !false) {
+	
+		document.getElementById('window').style.height = '340px';
+		
+		document.getElementById('window').style.width = '460px';
+		
+		button3.style.left = "370px";
+		
+		button2.style.left = "400px";
+		
+		button1.style.left = "430px";
+		
+		document.getElementById('window').style.position = 'absolute';
+		
+		
+		document.getElementById('window').style.left = "100px";
+		document.getElementById('window').style.top = "100px";
+	};
+};
+
+let mousePosition;
+let offset = [0,0];
+let div = document.getElementById("window");
+let isDown = false;
+
+
+div.style.position = "absolute";
+div.style.border = "1px solid black";
+//div.style.borderRadius = "5px";
+
+div.style.left = "100px";
+div.style.top = "100px";
+
+
+div.style.background = "#edeceb";
+
+//document.body.appendChild(div);
+
+div.addEventListener('mousedown', function(e) {
+    isDown = true;
+    offset = [
+        div.offsetLeft - e.clientX,
+        div.offsetTop - e.clientY
+    ];
+}, true);
+
+document.addEventListener('mouseup', function() {
+    isDown = false;
+}, true);
+
+document.addEventListener('mousemove', function(event) {
+    event.preventDefault();
+    if (isDown) {
+        mousePosition = {
+
+            x : event.clientX,
+            y : event.clientY
+
+        };
+        div.style.left = (mousePosition.x + offset[0]) + 'px';
+        div.style.top  = (mousePosition.y + offset[1]) + 'px';
+    }
+}, true);
+
+
+</script>
+
+</body></html>

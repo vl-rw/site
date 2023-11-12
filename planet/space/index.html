@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Orbits</title>
+    
+    <link rel="icon" href="../../images/fac.png" type="image/x-icon" />
+    
+    <style>
+    body {
+    	margin: auto;
+    	overflow: hidden;
+    	background-image: url('../space.jpg');
+    }
+    button {
+    	position: fixed;
+    	left: 0;
+    	margin: 20px;
+    	width: 200px;
+    	height: 20px;
+    }
+    p {
+        color: red;
+    }
+    .planet {
+        position: fixed;
+        margin:auto;        
+        width: 75%;        left: 10%;
+        height: 75%;
+     }
+    .image {
+      	margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        width: 600px;
+        height: 400px;
+    }
+    #orbit1 {
+        position: absolute;
+        margin-top: 5%;
+    }
+    #orbit2 {
+        position: absolute;
+        margin-top: -2%;
+        margin-left: -10%;
+    }
+    #orbit1 img {
+        width: 900px;
+        height: 900px;
+    }
+    #orbit3 img {
+        width: 900px;
+        height: 900px;
+    }
+    #orbit2 img {
+        width: 900px;
+        height: 900px;
+    }
+    #orbit3 {
+        position: absolute;
+        margin-top: 1%;
+        margin-left: -7%;
+        transform: skew(15deg, 15deg);
+    }
+    #orbit3 img {
+              width: 500px;
+        	height: 500px;
+    }
+    button:hover #orbit3 img {
+          animation: animate 
+                1.5s linear infinite;
+    }
+      
+    @keyframes animate{
+   		0%{
+     		opacity: 0.5;
+   		}
+   		50%{
+     		opacity: 0.9;
+   		}
+   		100%{
+     		opacity: 3;
+   		}
+   	}
+    </style>
+</head>
+
+
+
+  
+<body class="container">
+  
+  <button onclick="window.open('./first_ship/index.html')">ship 1</button> <br>
+  
+  <button onclick="window.open('./second_ship/index.html')">ship 2</button> <br>
+  
+  <button onclick="window.open('./third_ship/index.html')">UNSC INFINITY</button> <br>
+   
+  <div>
+    
+		<div id="orbit1" class="image">
+    
+        		<img src="orbb.png" />
+    
+    	</div>
+    	
+    	
+    
+    	<div class="image planet">
+    
+        	<img src="../planet.gif" />
+    
+    	</div>
+    	
+    	
+    
+    
+    	<div id="orbit2" class="image">
+    
+        	<img src="orbb.png" />
+    
+    	</div>
+    	
+    	
+    
+    	<div id="orbit3" class="image">
+    
+        	<img src="orbb.png" />
+    
+    	</div>
+    	
+    	
+    
+  </div>
+
+    
+    
+    
+
+    <script>
+    i= 0 ;
+    function rotation() {
+    
+        i++;
+        
+        orbit1.style.transform = `rotate(${i}deg)`;
+    
+        orbit2.style.transform = `rotate(${360-i}deg)`;
+        
+        orbit3.style.transform = `rotate(${2*i}deg)`;
+        
+        if (i == 360) i = 0;
+        
+        setTimeout(() => rotation(), 30)
+    
+    };
+    
+    rotation();
+    </script>
+    
+    
+    
+  </body>
+</html>
+
