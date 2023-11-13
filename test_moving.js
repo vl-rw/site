@@ -54,7 +54,7 @@ function go_l() {
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
 		document.getElementById(`${current_x+1}_${current_y}_block`).innerHTML="";
-		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'   +   player_stroke  + '" class="pl toLeft" ></div>'   ;
+		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'   +   player_stroke  + '" class="pl" ></div>'   ;
 		document.getElementById("chosen").style.transitionDuration = time + "s";
 		door(`${current_x}_${current_y}_block`);
 
@@ -80,10 +80,10 @@ function go_r() {
 	current_x++;
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="20px";
+
+	document.getElementById("chosen").classList.remove('toLeft');
 		
 	setTimeout( () => {
-
-		document.getElementById("chosen").classList.remove('toLeft');
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
@@ -112,11 +112,11 @@ function go_u() {
 	current_y--;
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginTop="-20px";
+
+	document.getElementById("chosen").classList.remove('toLeft');
 		
 	setTimeout( () => {
 
-		document.getElementById("chosen").classList.remove('toLeft');
-	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
 		document.getElementById(`${current_x}_${current_y+1}_block`).innerHTML="";
@@ -143,10 +143,10 @@ function go_d() {
 	current_y++;
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginTop="20px";
+
+	document.getElementById("chosen").classList.remove('toLeft');
 		
 	setTimeout( () => {
-
-		document.getElementById("chosen").classList.remove('toLeft');
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
