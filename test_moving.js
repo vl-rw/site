@@ -21,7 +21,7 @@ function key_v() {
 };
 
 
-// const player_stroke_norm = player_stroke;
+const player_stroke_norm = player_stroke;
 
 const player_stroke_left = player_stroke + '" class="toLeft pl';
 
@@ -35,17 +35,17 @@ function go_l() {
 	
 	if (document.getElementById(`${current_x-1}_${current_y}_block`)) {
  	
-	//message('yes');
 	current_x--;
-	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="-20px";
+	
+	player_stroke = player_stroke_left;
 		
 	setTimeout( () => {
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
 		document.getElementById(`${current_x+1}_${current_y}_block`).innerHTML="";
-		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'  + player_stroke_left + '" ></div>'   ;
+		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'  + player_stroke + '" ></div>'   ;
 		document.getElementById("chosen").style.transitionDuration = time + "s";
 		door(`${current_x}_${current_y}_block`);
 	
@@ -65,10 +65,10 @@ function go_r() {
 	
 	if (document.getElementById(`${current_x+1}_${current_y}_block`)) {
  	
-	//message('yes');
 	current_x++;
-	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="20px";
+	
+    player_stroke = player_stroke_norm;
 		
 	setTimeout( () => {
 	
@@ -95,9 +95,7 @@ function go_u() {
 	
 	if (document.getElementById(`${current_x}_${current_y-1}_block`)) {
  	
-	//message('yes');
 	current_y--;
-	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginTop="-20px";
 		
 	setTimeout( () => {
@@ -124,9 +122,7 @@ function go_d() {
 	
 	if (document.getElementById(`${current_x}_${current_y+1}_block`)) {
  	
-	//message('yes');
 	current_y++;
-	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginTop="20px";
 		
 	setTimeout( () => {
@@ -143,4 +139,3 @@ function go_d() {
 	};
 };
 
- 
