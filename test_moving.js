@@ -1,36 +1,28 @@
 
 function key_z() {
-
-message('z')
-if (link_z) window.open(link_z);
-
+	message('z');
+	if (link_z) window.open(link_z);
 };
 
 function key_x() {
-
-message('x')
-if (link_x) window.open(link_x);
-
+	message('x');
+	if (link_x) window.open(link_x);
 };
  
 function key_c() {
-
-message('c')
-if (link_c) window.open(link_c);
-
+	message('c');
+	if (link_c) window.open(link_c);
 };
 
 function key_v() {
-
-message('v')
-if (link_v) window.open(link_v);
-
+	message('v');
+	if (link_v) window.open(link_v);
 };
 
 
-const player_stroke_norm = player_stroke;
+// const player_stroke_norm = player_stroke;
 
-const player_stroke_left = player_stroke + '" class="toLeft';
+const player_stroke_left = player_stroke + '" class="toLeft pl';
 
 function go_l() {
 
@@ -46,15 +38,13 @@ function go_l() {
 	current_x--;
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="-20px";
-
-	player_stroke = player_stroke_left;
 		
 	setTimeout( () => {
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
 		document.getElementById(`${current_x+1}_${current_y}_block`).innerHTML="";
-		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'  + player_stroke + '" class="pl" ></div>'   ;
+		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'  + player_stroke_left + '" ></div>'   ;
 		document.getElementById("chosen").style.transitionDuration = time + "s";
 		door(`${current_x}_${current_y}_block`);
 	
@@ -78,8 +68,6 @@ function go_r() {
 	current_x++;
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="20px";
-
-	player_stroke = player_stroke_norm;
 		
 	setTimeout( () => {
 	
@@ -153,6 +141,5 @@ function go_d() {
 
 	};
 };
-
 
  
