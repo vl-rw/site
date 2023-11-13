@@ -1,3 +1,4 @@
+player_stroke="sprites/ghost.gif";
 
 function key_z() {
 	message('z');
