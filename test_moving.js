@@ -28,7 +28,9 @@ if (link_v) window.open(link_v);
 };
 
 
-const player_stroke_1 = player_stroke;
+const player_stroke_norm = player_stroke;
+
+const player_stroke_left = player_stroke + '" class="toLeft';
 
 function go_l() {
 
@@ -45,14 +47,14 @@ function go_l() {
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="-20px";
 
-	player_stroke = player_stroke + '" class="toLeft';
+	player_stroke = player_stroke_left;
 		
 	setTimeout( () => {
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
 		document.getElementById(`${current_x+1}_${current_y}_block`).innerHTML="";
-		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'   +   player_stroke  + '" class="pl" ></div>'   ;
+		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'  + player_stroke + '" class="pl" ></div>'   ;
 		document.getElementById("chosen").style.transitionDuration = time + "s";
 		door(`${current_x}_${current_y}_block`);
 	
@@ -77,7 +79,7 @@ function go_r() {
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="20px";
 
-	player_stroke = player_stroke_1;
+	player_stroke = player_stroke_norm;
 		
 	setTimeout( () => {
 	
