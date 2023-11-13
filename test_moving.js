@@ -43,6 +43,7 @@ function go_l() {
 	current_x--;
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="-20px";
+	
 		
 	setTimeout( () => {
 	
@@ -52,6 +53,7 @@ function go_l() {
 		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'   +   player_stroke  + '" class="pl" ></div>'   ;
 		document.getElementById("chosen").style.transitionDuration = time + "s";
 		door(`${current_x}_${current_y}_block`);
+		document.getElementById("chosen").classList.add('toLeft');
 	
 	}, time * 1000);
 
@@ -82,6 +84,7 @@ function go_r() {
 		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'   +   player_stroke  + '" class="pl" ></div>'   ;
 		document.getElementById("chosen").style.transitionDuration = time + "s";
 		door(`${current_x}_${current_y}_block`);
+		document.getElementById("chosen").classList.remove('toLeft');
 	
 	}, time * 1000);
 
