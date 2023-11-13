@@ -111,3 +111,6 @@ border-radius: 50%;
 #exod {
 height: 100px;
 }
+.toLeft {
+transform: scaleX(-1);
+}
