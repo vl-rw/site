@@ -45,17 +45,19 @@ function go_l() {
 	document.getElementById("chosen").style.marginLeft="-20px";
 
 	document.getElementById("chosen").classList.add('toLeft');
-	
 		
 	setTimeout( () => {
+
+		document.getElementById("chosen").classList.remove('toLeft');
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
 		document.getElementById(`${current_x+1}_${current_y}_block`).innerHTML="";
-		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'   +   player_stroke  + '" class="pl" ></div>'   ;
+		document.getElementById(`${current_x}_${current_y}_block`).innerHTML='<div id="chosen"><img src="'   +   player_stroke  + '" class="pl toLeft" ></div>'   ;
 		document.getElementById("chosen").style.transitionDuration = time + "s";
 		door(`${current_x}_${current_y}_block`);
-		
+
+		document.getElementById("chosen").classList.add('toLeft');
 	
 	}, time * 1000);
 
@@ -78,9 +80,11 @@ function go_r() {
 	//document.getElementById("chosen").style.transitionDuration = time + "s";
 	document.getElementById("chosen").style.marginLeft="20px";
 
-	document.getElementById("chosen").classList.remove('toLeft');
+	document.getElementById("chosen").classList.add('toLeft');
 		
 	setTimeout( () => {
+
+		document.getElementById("chosen").classList.remove('toLeft');
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
@@ -111,6 +115,8 @@ function go_u() {
 	document.getElementById("chosen").style.marginTop="-20px";
 		
 	setTimeout( () => {
+
+		document.getElementById("chosen").classList.remove('toLeft');
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
@@ -140,6 +146,8 @@ function go_d() {
 	document.getElementById("chosen").style.marginTop="20px";
 		
 	setTimeout( () => {
+
+		document.getElementById("chosen").classList.remove('toLeft');
 	
 		document.getElementById("chosen").style.transitionDuration = "0s";
 		document.getElementById("chosen").style.marginLeft="0px";
