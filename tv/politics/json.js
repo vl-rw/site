@@ -49,6 +49,8 @@ json = {
     "img44" : "img/pyu01901.jpg",
     "img45" : "img/screen0jtyyj9.jpg",
     "img46" : "img/thrhr.jpg",
+    "img47" : "img/14bac3b6-ca4f-47c2-8356-a2f56a92d855.jpeg",
+    "img48" : "img/954.jpeg",
     
 }; 
 
