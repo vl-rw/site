@@ -150,42 +150,42 @@ function door(text) {
 //message(text);
 	switch (text) {
   	case "7_6_block":
-    	message('Press Z to go to sex information<br><br><br><br>');
+    	message('Z → sex diff. info<br><br><br><br>');
 		link_z = "sex/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "4_7_block":
-    	message('Press Z to go to sex information<br><br><br><br>');
+    	message('Z → sex diff. info<br><br><br><br>');
 		link_z = "sex/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "5_7_block":
-    	message('Press Z to go to sex information<br><br><br><br>');
+    	message('Z → sex diff. info<br><br><br><br>');
 		link_z = "sex/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "7_7_block":
-    	message('Press Z to go to sex information<br><br><br><br>');
+    	message('Z → sex diff. info<br><br><br><br>');
 		link_z = "sex/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "9_7_block":
-    	message('Press Z to go to coding <br> Press X to go to articles<br><br><br><br>');
+    	message('Z → coding <br>X → articles<br><br><br><br>');
 		link_z = "program/index.html";
 		link_x = "articles/index.html";
 		link_c = "";
 		link_v = "";
     	break;
   	case "10_7_block":
-    	message('Press Z to go to coding <br> Press X to go to articles<br><br><br><br>');
+    	message('Z → coding <br>X → articles<br><br><br><br>');
 		link_z = "program/index.html";
 		link_x = "articles/index.html";
 		link_c = "";
@@ -206,14 +206,14 @@ function door(text) {
 		link_v = "";
     	break;
   	case "20_7_block":
-    	message('Press Z to exit<br><br><br><br>');
+    	message('Z → exit<br><br><br><br>');
 		link_z = "https://www.google.com/";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "16_8_block":
-    	message('Press Z to planet<br><br><br><br>');
+    	message('Z → planet<br><br><br><br>');
 		link_z = "planet/index.html";
 		link_x = "";
 		link_c = "";
@@ -228,49 +228,49 @@ function door(text) {
 		link_v = "";
     	break;
   	case "23_10_block":
-    	message('Press Z to Chemistry<br><br><br><br>');
+    	message('Z → Chemistry<br><br><br><br>');
 		link_z = "chem/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "22_11_block":
-    	message('Press Z to Chemistry<br><br><br><br>');
+    	message('Z → Chemistry<br><br><br><br>');
 		link_z = "chem/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "23_12_block":
-    	message('Press Z to Chemistry<br><br><br><br>');
+    	message('Z → Chemistry<br><br><br><br>');
 		link_z = "chem/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "4_14_block":
-    	message('Press Z to donate<br><br><br><br>');
+    	message('Z → donate<br><br><br><br>');
 		link_z = "donate/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "5_15_block":
-    	message('Press Z to donate<br><br><br><br>');
+    	message('Z → donate<br><br><br><br>');
 		link_z = "donate/index.html";
 		link_x = "";
 		link_c = "";
 		link_v = "";
     	break;
   	case "21_14_block":
-    	message('Press Z for memes <br>Press X for player <br>Press C for videos <br>Press V for dendy <br><br><br><br>');
+    	message('Z → memes <br>X → music <br>C → videos <br>V → dendy <br><br><br><br>');
 		link_z = "tv/politics/index.html";
 		link_x = "tv/player/index.html";
 		link_c = "tv/video/index.html";
 		link_v = "tv/html-emulator/index.html";
     	break;
   	case "22_14_block":
-    	message('Press Z for memes <br>Press X for player <br>Press C for videos <br>Press V for dendy <br><br><br><br>');
+    	message('Z → memes <br>X → music <br>C → videos <br>V → dendy <br><br><br><br>');
 		link_z = "tv/politics/index.html";
 		link_x = "tv/player/index.html";
 		link_c = "tv/video/index.html";
