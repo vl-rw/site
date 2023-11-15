@@ -27,7 +27,7 @@
     /* title */
     {children:"Forest"}),
     (0,a.jsx)("meta",{name:"description",content:"bdfdbfdbdfbdfb"}),
-                                                                                                          (0,a.jsx)("link",{rel:"icon",type:"image/png",href:"/mask.png"}),
+                                                                                                          (0,a.jsx)("link",{rel:"icon",type:"image/png",href:"../images/fac.png"}),
                                                                                                           
                                                                                                           (0,a.jsx)("meta",{name:"twitter:card",content:"summary_large_image"}),
                                                                                                           
