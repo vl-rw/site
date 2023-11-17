@@ -79,7 +79,9 @@ width: 150px;
 
 <button onclick="try_f();print();">Try</button><br><br>
 
-<button onclick="xvid();print();">xvid</button><br><br>
+<button onclick="xvid_1();print();">xvid_1</button><br><br>
+
+<button onclick="xvid_2();print();">xvid_2</button><br><br>
 </div>
 
 
@@ -381,7 +383,7 @@ text +=  "<li>element.innerHTML = text</li>";
 text +=  "</ul>";
 };
 
-function xvid(){
+function xvid_1(){
 
 text = ""
 text += "# replace \"⠀\" with \" \"<br>"
@@ -450,6 +452,113 @@ text += "&#x2800;&#x2800;second = first.split(\"');\")[0]<br>"
 text += "<br>"
 text += "&#x2800;&#x2800;urllib.request.urlretrieve(second, title)<br>"
 };
+
+function xvid_2(){
+
+text = ""
+text += "# replace \"⠀\" with \" \"<_br_>";
+text += "import time<br>";
+text += "import requests<br>";
+text += "import urllib.request<br>";
+text += "import sys # for try<br>";
+text += "&#x2800;<br>";
+text += "f = open(\"links_here.txt\", \"r\")<br>";
+text += "text = f.read()<br>";
+text += "list = text.split('\\n')<br>";
+text += "f.close();<br>";
+text += "<br>";
+text += "def logging(a):<br>";
+text += "&#x2800;print(a)<br>";
+text += "&#x2800;f = open(\"log\", \"a\")<br>";
+text += "&#x2800;f.write(a)<br>";
+text += "&#x2800;f.write('\\n \\n')<br>";
+text += "&#x2800;f.close()<br>";
+text += "&#x2800;<br>";
+text += "log_argument = str(len(text)) + \" bytes\"<br>";
+text += "&#x2800;<br>";
+text += "logging(log_argument)<br>";
+text += "&#x2800;<br>";
+text += "list_of_links = []<br>";
+text += "<br>";
+text += "for element in list:<br>";
+text += "&#x2800;if '/video' in element:<br>";
+text += "&#x2800;&#x2800;list_of_links.append(element)<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "log_argument = str(len(list_of_links)) + \" links\"<br>";
+text += "&#x2800;<br>";
+text += "logging(log_argument)<br>";
+text += "<br>";
+text += "for index, item in enumerate(list_of_links):<br>";
+text += "&#x2800;print(\"Element \", (index+1), \" of \", len(list_of_links), \" - \", item)<br>";
+text += "<br>";
+text += "&#x2800;time.sleep(2*3)<br>";
+text += "&#x2800;url = item;<br>";
+text += "<br>";
+text += "&#x2800;title = url.split('/')[4]<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;try:<br>";
+text += "<br>";
+text += "&#x2800;&#x2800;response = requests.get(url)<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;except OSError as err:<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;log_argument = url + \" <= \" + \"OS error:\" + err<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;logging(log_argument)<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;except ValueError:<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;log_argument = url + \" <= \" + \"Could not convert data to an integer.\"<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;logging(log_argument)<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;except Exception as err:<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;log_argument = url + \" <= \" + err<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;logging(log_argument)<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;raise<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;#print(response.text)<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;if (\"UrlHigh(\" not in response.text):<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;log_argument = url + \" <= not found UrlHigh!\"<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;logging(log_argument)<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;else:<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;first = response.text.split(\"UrlHigh('\")[1]<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;second = first.split(\"');\")[0]<br>";
+text += "&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;try:<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;urllib.request.urlretrieve(second, title)<br>";
+text += "&#x2800;&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;except OSError as err:<br>";
+text += "&#x2800;&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;log_argument = url + \" <= \" +err<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;logging(log_argument)<br>";
+text += "&#x2800;&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;except ValueError:<br>";
+text += "&#x2800;&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;log_argument = url + \" <= \" + \"Could not convert data to an integer.\"<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;logging(log_argument)<br>";
+text += "&#x2800;&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;except Exception as err:<br>";
+text += "&#x2800;&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;log_argument = url + \" <= \" + err<br>";
+text += "&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;logging(log_argument)<br>";
+text += "&#x2800;&#x2800;&#x2800;<br>";
+text += "&#x2800;&#x2800;&#x2800;raise<br>";
+};
+  
 
 </script>
 </body>
