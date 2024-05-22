@@ -1,0 +1,81 @@
+<html>
+<head>
+<link rel="icon" type="image/x-icon" href="https://vl-rw.github.io/my_site/images/fac.png">
+<style>
+@font-face {
+	font-family: myFirstFont;
+	//src: url(good_times_rg.otf);
+	
+	src: url(urbantribE.ttf);
+}
+
+#clock {
+	margin-left: 5%;
+	font-family: myFirstFont;
+	font-size: 250px;
+	margin-top: 10%;
+}
+
+#body {
+	margin: -5px;
+	overflow: hidden;
+}
+</style>
+</head>
+<body id="body">
+
+
+
+<h1 id="clock" onclick="change()"></h1>
+
+
+
+
+<script>
+
+clock.style.color = "black";
+
+function change() {
+
+	if (clock.style.color == "black") {
+
+		clock.style.color = "white";
+
+		body.style.backgroundColor = "black";
+
+	} else {
+
+		clock.style.color = "black";
+
+		body.style.backgroundColor = "white";
+
+	};
+}
+
+let dots = false;
+
+function refresh() {
+
+	let a = new Date();
+
+	h = a.getHours();      if ( h < 10 ) h = "0" + h;
+
+	m = a.getMinutes();    if ( m < 10 ) m = "0" + m;
+
+	s = a.getSeconds();    if ( s < 10 ) s = "0" + s;
+
+	dots = !dots;
+
+	if (dots )  clock.textContent = h + ':' + m + ':' + s;
+
+	if (!dots)  clock.textContent = h + ' ' + m + ' ' + s;
+
+	setTimeout( () => { refresh() }, 500)
+
+};
+
+refresh();
+
+</script>
+</body>
+</html>
